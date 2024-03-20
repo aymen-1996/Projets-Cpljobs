@@ -1,0 +1,40 @@
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card"style="box-shadow: 0 5px 10px rgba(0,0,0,.2); left:50%;">
+      <div class="card-body">
+        <h4 class="card-title">Subordonné</h4>
+        <form [formGroup]="formsub" (ngSubmit)="addSub()">
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">nom</label>
+                <input type="text" formControlName="nom" class="form-control"  placeholder="nom">
+              </div>
+             
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">poste</label>
+                <input type="text" formControlName="poste" class="form-control"  placeholder="poste">
+              </div>
+          
+            <div class="form-group">
+            <label for="exampleInputUsername1">telephone </label>
+            <input  class="form-control" formControlName="tel" placeholder="telephone">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">email</label>
+            <input type="text" formControlName="email" class="form-control"  placeholder="email">
+          </div>
+          
+         
+         
+          
+       
+
+       
+          
+
+          <button type="submit" class="btn btn-gradient-primary me-2">save</button>
+        </form>
+      </div>
+    </div>
+  </div>

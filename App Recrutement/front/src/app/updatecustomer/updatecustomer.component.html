@@ -1,0 +1,216 @@
+
+<form [formGroup]="formCustomer" (ngSubmit)="updateCust()">
+
+<div class="col-md-6"  >
+ 
+    <div class="card"style="right:-400px; box-shadow: 0 5px 10px rgba(0,0,0,.2);border-radius: 2em;" >
+        <div class="card-body">
+     <div class="form-group">
+      <label class="form-label" for="form3Example1c" >Nom</label>
+          <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" formControlName="nom" placeholder="nom">
+          
+        </div>
+        <div class="form-group">
+        
+        
+          <div class="mb-1" >
+            <label class="form-label"  >Region:</label>
+            <div class="container" >
+            
+                
+        
+                  <div class="form-group" >
+                
+                    
+  <select formControlName="region"  class="form-control" >
+    <option value="" disabled selected>region</option>
+    <option >Ariana </option>
+    <option >Beja </option>
+    <option >Ben Arous </option>
+    <option value="Bizerte (Banzart)">Bizerte </option>
+    <option value="Gabes (Qabis)">Gabes </option>
+    <option value="Gafsa (Qafsah)">Gafsa </option>
+    <option value="Jendouba (Jundubah)">Jendouba </option>
+    <option value="Kairouan (Al Qayrawan)">Kairouan </option>
+    <option value="Kasserine (Al Qasrayn)">Kasserine </option>
+    <option value="Kebili (Qibili)">Kebili </option>
+    <option value="Kef (Al Kaf)">Kef </option>
+    <option value="Mahdia (Al Mahdiyah)">Mahdia </option>
+    <option value="Manouba (Manubah)">Manouba </option>
+    <option value="Medenine (Madanin)">Medenine </option>
+    <option value="Monastir (Al Munastir)">Monastir </option>
+    <option value="Nabeul (Nabul)">Nabeul </option>
+    <option value="Sfax (Safaqis)">Sfax (Safaqis)</option>
+    <option value="Sidi Bou Zid (Sidi Bu Zayd)">Sidi Bou Zid </option>
+    <option value="Siliana (Silyanah)">Siliana </option>
+    <option value="Sousse (Susah)">Sousse</option>
+    <option value="Tataouine (Tatawin)">Tataouine </option>
+    <option value="Tozeur (Tawzar)">Tozeur </option>
+    <option value="Tunis">Tunis</option>
+    <option value="Zaghouan (Zaghwan)">Zaghouan </option>
+    </select>
+                    
+                  </div>
+                
+                  
+             
+          </div>
+           
+       
+            
+            <span class="text-danger"
+                  *ngIf="formCustomer.controls['region'].touched
+                  && formCustomer.controls['region'].errors
+                  && formCustomer.controls['region'].errors!['required']">
+                  champ obligatoire
+            </span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="form3Example1c" >Age</label>
+          <input type="number" class="form-control form-control-lg" id="exampleInputEmail1" formControlName="age"placeholder="age">
+          
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="form3Example1c" >email</label>
+            <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" formControlName="email"placeholder="email">
+            
+          </div>
+          <div class="form-group">
+          
+            <div class="mb-1" >
+              <label class="form-label"  >Secteur:</label>
+              <div class="container" >
+              
+                  
+          
+                    <div class="form-group" >
+                  
+                        <select formControlName="secteur"  class="form-control"  >
+                          <option value="" disabled selected>secteur</option>
+                            <option >Achats / Logistique</option>
+                            <option >Administration / Secrétariat</option>
+                            <option >Aéronautique / Aviation / Voyages</option>
+                            <option >Agent polyvalent / Ouvrier Spécialisé</option>
+                            <option >Agricuture / Agro-Alimentaire / Environnement</option>
+                            <option >Architecture / Immobilier</option>
+                            <option >Artisanat / Métier de L'Art</option>
+                            <option >Automobile / Moteurs / Engins Mécaniques</option>
+                            <option >Banque / Assurances / Finance Marché</option>
+                            <option >Bàtiment Travaux Public Btp</option>
+                            <option >Call Center / Télévente</option>
+                            <option >Chimie / Biologie / Physique</option>
+                            <option >Commercial / Vente / Distrution</option>
+                            <option >Comptabilité / Gestion Finance / Audit</option>
+                            <option >Consultant / Etude / Conseil</option>
+                            <option >Cosmétique / Parfumerie / Luxe</option>
+                            <option >Culture / Audiovisuel</option>
+                            <option >Direction / Management / Stratégie</option>
+                            <option >Droit / Fiscalité / Juridique</option>
+                            <option >Électronique / Électricité / Énergie </option>
+                            <option >Enseignement / Formation </option>
+                            <option >Export / Transit</option>
+                            <option >Gardiennage / Securité</option>
+                            <option >Informatique / Multimédia </option>
+                            <option >Ingénieur / Industrie / Production </option>
+                            <option >Journalisme / Traduction /Édition </option>
+                            <option >Maintenance / Qualité</option>
+                            <option >Marketing / Publicité / Communication</option>
+                            <option >Ressources Humaines / Social</option>
+                            <option >Santé / Paramédical / Optique</option>
+                            <option >Technicien / Industrie / Production</option>
+                            <option >Télécom / Réseaux</option>
+                            <option >Textile / Cuir</option>
+                            <option >Tourisme / Hôtellerie / Restauration / Loisirs</option>
+                            <option>Transport / Livraison / Manutention</option>
+                            <option >Autres </option>
+                
+    
+                    
+                        </select>
+                      
+                    </div>
+                  
+                    
+               
+            </div>
+             
+         
+              
+              <span class="text-danger"
+                    *ngIf="formCustomer.controls['secteur'].touched
+                    && formCustomer.controls['secteur'].errors
+                    && formCustomer.controls['secteur'].errors!['required']">
+                    champ obligatoire
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+           
+            <div class="mb-1" >
+              <label class="form-label"  >Etude:</label>
+              <div class="container" >
+              
+                  
+          
+                    <div class="form-group" >
+                  
+                      
+    <select formControlName="etude"  class="form-control" >
+      <option value="" disabled selected>Niveau d'étude</option>
+      <option>Primaire </option>
+      <option >Secondaire </option>
+      <option >Formations professionnelles </option>
+      <option >Bac </option>
+      <option >Bac + 1 </option>
+      <option >Bac + 2 </option>
+      <option >Bac + 3 </option>
+      <option >Bac + 4 </option>
+      <option >Bac + 5 </option>
+      <option >Doctorat </option>
+      <option>Expert,Recherche </option>
+      <option >Autres </option>
+      
+      </select>
+                      
+                    </div>
+                  
+                    
+               
+            </div>
+             
+         
+              
+              <span class="text-danger"
+                    *ngIf="formCustomer.controls['region'].touched
+                    && formCustomer.controls['region'].errors
+                    && formCustomer.controls['region'].errors!['required']">
+                    champ obligatoire
+              </span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="form3Example1c" > AnneeExperience</label>
+            <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" formControlName="anneeExperience"placeholder="anneeExperience">
+            
+          </div>
+          <div class="mb-1">
+            <label class="form-label">Tel:</label>
+            <input type="text" formControlName="telephone" class="form-control"  placeholder="telephone">
+            <span class="text-danger"
+                  *ngIf="formCustomer.controls['telephone'].touched
+                  && formCustomer.controls['telephone'].errors
+                  && formCustomer.controls['telephone'].errors!['required']">
+                  champ obligatoire
+            </span>
+          </div>
+
+        <div class="mt-3">
+          <button ype="submit" class="btn btn-info"(click)="updateCust()"> Update <i class="mdi mdi-file-check btn-icon-append"></i>
+          </button>
+        </div>
+     </div>
+     </div>
+     
+</div>
+</form>

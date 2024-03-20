@@ -1,0 +1,238 @@
+<app-navbar></app-navbar>
+<section class="item-details section">
+
+    <div class="container">
+        <div  *ngFor="let ann of ann">
+            <h4 style="position: relative;left: 40%;" class="title">
+                <a >{{ann.titre}}</a>
+            </h4>
+        </div>
+        <br>
+       
+
+        <div class="top-area">
+            <div class="row align-items-center" *ngFor="let can of annCan"> 
+             
+                <div class="col-lg-4 column-with-border " >
+                    <div class="product-images">
+                        <main id="gallery">
+                            <div class="main-img" >
+                                <img  src="{{srcImageUser+can.photo}}" style="width: 230px;height: 250px;">
+                            </div>
+                           
+                        </main>
+                    </div>
+                </div>
+                <div class="col-lg-4 column-with-border">
+                    <div class="product-info">
+                        <h2 class="title">{{can.user.nom}} {{can.user.prenom}}</h2>
+                        <p class="category"> {{can.age}}<a >ans</a></p>
+                     
+                        <p class="info-text">{{can.adresse}}</p>
+                        <p class="info-text">  <i class="lni lni-phone"></i>  (+216){{can.telephone}}</p>
+                        <p class="info-text">{{can.user.email}}</p>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-4 " *ngFor="let ann of ann">
+                    <div class="product-info">
+
+                        <p class="category">Étude:</p>
+                        <h6 >{{ann.etude}}</h6>
+                        <p class="category">Expérience:</p>
+                        <h6 style="display: inline-block;">{{ann.experience}}</h6>
+                        <p class="category" >professionnelle:</p>
+                        <h6>{{ann.situation}}</h6>
+                        <p class="category" >Disponibilité:</p>
+                        <h6>{{ann.disponibilite}}</h6>
+                       
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="product-details-info">
+            <div class="single-block">
+              <div class="row">
+                <div class="col-lg-6 col-12">
+                  <div class="info-body custom-responsive-margin">
+                    <a>Points forts/Résumé:</a>
+                    <p *ngFor="let ptfort of userfort ">{{ ptfort.pointFort }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+   
+        <div class="product-details-info">
+            <div class="single-block">
+                <div class="row">
+                    <div class="col-lg-3 column-with1-border" >
+                        <div class="info-body custom-responsive-margin">
+                            <span class="base span4">Expériences professionnelles
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-9 " *ngFor="let ex of ex">
+                        <div class="info-body">
+                            <h4>{{ex.titrepost}}</h4>
+                            <ul class="normal-list">
+                                <li><span>Periode:</span>{{ex.periode}}</li>
+                                <li><span>Lieu:</span>{{ex.lieu}}</li>
+                                <li><span>Secteur:</span> {{ex.secteuract}}</li>
+                                <li><span>Categorie d'entreprise:</span>{{ex.catentreprise}}</li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+         
+        </div>
+        <div class="product-details-info">
+            <div class="single-block">
+                <div class="row">
+                    <div class="col-lg-3 column-with1-border" >
+                        <div class="info-body custom-responsive-margin">
+                            <span class="base span4">Diplômes et formations
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-9 " *ngFor="let form of for">
+                        <div class="info-body">
+                            <h4>{{form.diplome}}</h4>
+                            <ul class="normal-list">
+                                <li><span>Statut:</span>{{form.statut}}</li>
+                                <li><span>Periode:</span>{{form.periode | date}}</li>
+                                <li><span>Etablissement:</span> {{form.etablissement}}</li>
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+         
+        </div>
+
+        <div class="product-details-info">
+            <div class="single-block">
+                <div class="row">
+                    <div class="col-lg-3 column-with1-border" >
+                        <div class="info-body custom-responsive-margin">
+                            <span class="base span4">Compétences
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-9 " *ngFor="let skil of ski">
+                        <div class="info-body">
+                            <h4>{{skil.competence}}</h4>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+         
+        </div>
+
+        <div class="product-details-info">
+            <div class="single-block">
+                <div class="row">
+                    <div class="col-lg-3 column-with1-border" >
+                        <div class="info-body custom-responsive-margin">
+                            <span class="base span4">Langues
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-9 " *ngFor="let lang of lang">
+                        <div class="info-body">
+                            <h4>{{lang.langues}}</h4>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+         
+        </div>
+
+
+        <div class="product-details-info">
+            <div class="single-block">
+                <div class="row">
+                    <div class="col-lg-3 column-with1-border" >
+                        <div class="info-body custom-responsive-margin">
+                            <span class="base span4">Documents
+
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-9 " *ngFor="let doc of doc">
+                        <div class="info-body">
+                        
+                                <h4>{{doc.titre}}</h4>
+                               
+                          
+                            <button (click)="loadFileContent(doc.doc) " class="btn btn-success">
+                               <a>telecharger</a>
+                              </button>
+                  
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+         
+        </div>
+
+        <div class="product-details-info">
+            <div class="single-block">
+                <div class="row">
+                    <div class="col-lg-3 column-with1-border" >
+                        <div class="info-body custom-responsive-margin">
+                            <span class="base span4">Centres d'intérêt
+
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-9 " *ngFor="let skil of ski">
+                        <div class="info-body">
+                            <h4>{{skil.competence}}</h4>
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+         
+        </div>
+        
+
+    </div>
+</section>
+<app-footer></app-footer>

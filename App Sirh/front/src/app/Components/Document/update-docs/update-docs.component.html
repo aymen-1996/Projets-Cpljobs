@@ -1,0 +1,55 @@
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card"style="box-shadow: 0 5px 10px rgba(0,0,0,.2); left:50%;">
+      <div class="card-body">
+        <h4 class="card-title">Documents administratifs </h4>
+
+        <form [formGroup]="formDoc" (ngSubmit)="updateDoc()">
+          <label>Type de contrat</label>
+            <div class="form-group row">
+                
+                <div class="col-sm-3">
+                    
+                  <div class="form-check">
+                    
+                    <label class="form-check-label">
+                      <input formControlName="type_contrat" type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="sivp"> SIVP <i class="input-helper"></i></label>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio"formControlName="type_contrat" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="cdd"> CDD <i class="input-helper"></i></label>
+                  </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio"formControlName="type_contrat" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="cdi"> CDI <i class="input-helper"></i></label>
+                    </div>
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio"formControlName="type_contrat" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="Honoraires"> Honoraires <i class="input-helper"></i></label>
+                    </div>
+                  </div>
+              </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">anciennete</label>
+            <input type="text" formControlName="anciennete" class="form-control"  placeholder="anciennete">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">mobilite</label>
+            <input type="text" formControlName="mobilite" class="form-control"  placeholder="mobilite">
+          </div>
+      
+
+          
+        
+         
+          <button type="submit" class="btn btn-gradient-primary me-2">save</button>
+        </form>
+      </div>
+    </div>
+  </div>

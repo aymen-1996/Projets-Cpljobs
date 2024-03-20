@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<br>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Référence</th>
+                <th>Titre</th>
+                <th>Période de publication</th>
+                <th>Statut</th>
+                <th>Candidats</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ann of annonce | paginate: { itemsPerPage: 10, currentPage: p}">
+                <td>{{ ann.id }}</td>
+                <td>{{ ann.titre }}</td>
+                <td>{{ ann.date|date }}</td>
+                <td><span class="label">
+                    {{ ann.statut }}
+                </span></td>
+                <td>{{count[ann.id]}}</td>
+                <td routerLink="/anncan/{{ann.id}}"> <span style="background-color: blue;" class="label">
+                    Voir Plus
+                </span></td>
+
+
+
+         
+            </tr>
+        </tbody>
+    </table>
+  </body>
+  <br>
+  <pagination-controls style="position: relative;left:600px"
+  previousLabel="Precedent"
+                    nextLabel="Suivant"
+                     (pageChange)="p = $event"></pagination-controls>
+
+
+
+<br>
+ 
+<br>
+<app-footer></app-footer>

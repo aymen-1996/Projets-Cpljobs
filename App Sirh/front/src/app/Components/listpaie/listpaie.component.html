@@ -1,0 +1,40 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Listede demmande</h4>
+     
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Nom</th>
+          
+            <th> date </th>
+            <th> fichier </th>
+            <th>Action </th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let paie of paie  ">
+            <td>{{paie.user.nom}}</td>
+      
+            <td> {{paie.date | date}} </td>
+
+            <td  (click)="loadFileContent(paie.fichier) " style="font-size:36px;color:rgb(255, 0, 0)">
+              
+                <i class="mdi mdi-file-pdf "></i>
+             
+            </td>
+            
+            <td>
+                <label class="badge badge-gradient-danger" (click)="deleteInfo(paie.id)">Delete</label>
+                
+              </td>
+        
+      
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+   
+  </div>

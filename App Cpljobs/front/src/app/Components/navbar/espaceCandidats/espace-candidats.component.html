@@ -1,0 +1,180 @@
+<app-navbar></app-navbar>
+<div  style=" background-color: rgb(238,238,238);">
+<section class="call-action section" style="background-color: #009efa;">
+    <div class="container"style="position: relative;left: 50px;">
+        <h2 class="wow fadeInUp" data-wow-delay=".4s" style="color: white;">Afficher toutes les listes d'offres d'emploi
+        </h2>
+
+
+        <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
+            <div class="row" style="top: 15px;position: relative;">
+                <div class="col-md-3">
+                    <label style="color: #fff; font-size: 17px;"><strong>Mot Clé</strong> </label>
+                    <br>
+                    <input type="text" class="form-control" placeholder="Mot Clé"  formControlName="keyword" (input)="handleSearchCustomers()">
+                </div>
+                <div class="col-md-3">
+                    <label style="color: #fff; font-size: 17px;"><strong>chercher un emploi en</strong> </label>
+                    <select   formControlName="secteur" (change)="handleSearchCustomers()" >
+                        <option>Sélectionner un type d'offre d'emploi</option>
+                        <option >Achats / Logistique</option>
+                        <option >Administration / Secrétariat</option>
+                        <option >Aéronautique / Aviation / Voyages</option>
+                        <option >Agent polyvalent / Ouvrier Spécialisé</option>
+                        <option >Agricuture / Agro-Alimentaire / Environnement</option>
+                        <option >Architecture / Immobilier</option>
+                        <option >Artisanat / Métier de L'Art</option>
+                        <option >Automobile / Moteurs / Engins Mécaniques</option>
+                        <option >Banque / Assurances / Finance Marché</option>
+                        <option >Bàtiment Travaux Public Btp</option>
+                        <option >Call Center / Télévente</option>
+                        <option >Chimie / Biologie / Physique</option>
+                        <option >Commercial / Vente / Distrution</option>
+                        <option >Comptabilité / Gestion Finance / Audit</option>
+                        <option >Consultant / Etude / Conseil</option>
+                        <option >Cosmétique / Parfumerie / Luxe</option>
+                        <option >Culture / Audiovisuel</option>
+                        <option >Direction / Management / Stratégie</option>
+                        <option >Droit / Fiscalité / Juridique</option>
+                        <option >Électronique / Électricité / Énergie </option>
+                        <option >Enseignement / Formation </option>
+                        <option >Export / Transit</option>
+                        <option >Gardiennage / Securité</option>
+                        <option >Informatique / Multimédia </option>
+                        <option >Ingénieur / Industrie / Production </option>
+                        <option >Journalisme / Traduction /Édition </option>
+                        <option >Maintenance / Qualité</option>
+                        <option >Marketing / Publicité / Communication</option>
+                        <option >Ressources Humaines / Social</option>
+                        <option >Santé / Paramédical / Optique</option>
+                        <option >Technicien / Industrie / Production</option>
+                        <option >Télécom / Réseaux</option>
+                        <option >Textile / Cuir</option>
+                        <option >Tourisme / Hôtellerie / Restauration / Loisirs</option>
+                        <option>Transport / Livraison / Manutention</option>
+                        <option >Autres </option>
+            
+                        </select>
+                </div>
+                <div class="col-md-3">
+                    <label style="color: #fff; font-size: 17px;"><strong>Situé à/en ...</strong> </label>
+                    <select  formControlName="region" (change)="handleSearchCustomers()" >
+                        <option>region</option>
+                        <option >Ariana </option>
+                        <option >Beja </option>
+                        <option >Ben Arous </option>
+                        <option >Bizerte </option>
+                        <option >Gabes </option>
+                        <option >Gafsa </option>
+                        <option >Jendouba </option>
+                        <option >Kairouan </option>
+                        <option >Kasserine </option>
+                        <option >Kebili </option>
+                        <option >Kef </option>
+                        <option >Mahdia </option>
+                        <option >Manouba </option>
+                        <option >Medenine </option>
+                        <option >Monastir </option>
+                        <option >Nabeul </option>
+                        <option >Sfax</option>
+                        <option >Sidi Bou Zid </option>
+                        <option >Siliana </option>
+                        <option >Sousse</option>
+                        <option >Tataouine </option>
+                        <option >Tozeur </option>
+                        <option >Tunis</option>
+                        <option >Zaghouan </option>
+                        </select>
+                </div>
+                <div class="col-md-3">
+                    <div class="search-btn">
+                        <button>Rechercher<i style="position: relative;left:10px" class="lni lni-search-alt"></i></button>
+                        </div>                </div>            
+            </div>
+        </form>
+       
+       
+    </div>
+</section>
+
+<div class="row" style="position: relative; top: 20px;">  
+    
+    <div class="col-md-11"  style="position: relative;left: 40px;"> 
+       
+        <div style="position: relative;">
+        <div style="position: absolute; top: -2px; left: 0; width: 100%; height: 2px; "></div>
+        <header class="header navbar-area"  style="background-color: rgb(216, 216, 216);">
+            <div class="header-middle">
+                <div class="container" >
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="nav-inner">
+                                <!-- Start Mega Category Menu -->
+                                <a class="navbar-brand">
+                                    <img style="width: 50px;position: relative; left: 505px; display: inline-block;" src="assets/images/logoo.png" alt="Logo">
+                                    <strong style="position: relative; left: 525px; color: #3e3e3e; font: 20px/23px 'Raleway', Arial, sans-serif; font-weight: bold;">Listes d'offres d'emploi</strong>
+                                </a>
+                                <!-- End Mega Category Menu -->
+                                <!-- Start Navbar -->
+                                <nav class="navbar navbar-expand-lg"></nav>
+                                <!-- End Navbar -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <br>
+        <article *ngFor="let ann of annonce | paginate: { itemsPerPage: 10, currentPage: p}" class="job-listing">
+          <div class="job-listing-item media">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="logo-container">
+                  <img class="company-logo" [src]="srcImageUser + ann.image" alt="Company Logo">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="job-details">
+                  <h2 class="job-title"><a [href]="ann.jobLink" class="job-link">{{ ann.titre }}</a></h2>
+                  <p class="job-description">{{ ann.description | slice:0:150 }}...</p>
+                  <div class="job-info">
+                    <span class="company-name">
+                      <img src="assets/images/entreprise.png" class="icon" alt="Company Icon">{{ ann.nom }}
+                    </span>
+                    <span class="location">
+                      <img src="assets/images/map.png" class="icon" alt="Location Icon">{{ ann.region }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="job-actions">
+                  <div class="job-date">{{ ann.date | date }}</div>
+                  <a [routerLink]="'/view/' + ann.id" class="view-more-link">Voir Plus</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        
+          
+    </div>
+
+    </div>
+   
+</div>
+</div>
+<br>
+<pagination-controls style="position: relative;left:600px"
+      previousLabel="Precedent"
+                        nextLabel="Suivant"
+                         (pageChange)="p = $event"></pagination-controls>
+
+
+
+<br>
+
+
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>

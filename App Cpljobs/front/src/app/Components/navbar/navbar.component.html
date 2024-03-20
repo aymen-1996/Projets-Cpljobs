@@ -1,0 +1,252 @@
+<header class="header navbar-area">
+  <!-- Start Topbar -->
+  <div class="topbar" style="height: 10px;">
+      <div class="container" >
+          <div class="row align-items-center">
+              <div class="col-lg-4 col-md-4 col-12">
+                <a class="btn btn-primary" *ngIf="user.nom != null" style="position: relative;left: 1281px; top: -20px;" onmouseover="this.style.color='orange'" onmouseout="this.style.color='white'" (click)="logout()" type="submit">Déconnexion </a>
+
+
+              </div>
+            
+            
+          </div>
+      </div>
+  </div>
+  <!-- End Topbar -->
+  <!-- Start Header Middle -->
+  <div class="header-middle" style="height: 150px;">
+      <div class="container">
+          <div class="row align-items-center">
+              <div class="col-lg-2 ">
+                  <!-- Start Header Logo -->
+                  <a class="navbar-brand" >
+                    <img style="width: 150px;height: 150px; display: inline-block;" src="assets/images/cpl.png" alt="Logo" routerLink="">
+                  </a>
+                  <!-- End Header Logo -->
+              </div>
+              <div class="col-lg-4  d-xs-none" >
+                <nav class="navbar navbar-expand-lg">
+                 
+                  <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                      <ul id="nav" class="navbar-nav ms-auto">
+                          <li class="nav-item" *ngIf="user.role !==null&&user.role !== 'Recruteur'">
+                              <a routerLink="/espace_candidat"  class="collapsed" aria-label="Toggle navigation">ESPACE CANDIDATS</a>
+                          </li>
+
+                          
+                          <li class="nav-item">
+                              <a routerLink="/employeurs" class="collapsed"  data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">ESPACE Employeurs</a>
+                              
+                          </li>
+                          
+                          <div class="col-3">
+                          <li class="nav-item">
+                            <a routerLink="/apropos" class="collapsed"  data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">A PROPOS DE CPL</a>
+                            
+                        </li>
+                      </div>
+                      <div class="col-3" *ngIf="user.role ==null  ">
+                          <li class="nav-item" >
+                            <a  class="collapsed"  data-bs-toggle="collapse" data-bs-toggle="modal" data-bs-target="#exampleModal-4" data-whatever="@mdo"  >Mon Compte</a>
+                          
+                        </li>
+                      </div>
+                      <div class="col-4">
+
+                        <li class="nav-item">
+                          <a routerLink="/contact" class="collapsed"  data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Contactez-nous</a>
+                     
+                      </li>
+                      </div>
+                      <li class="nav-item" *ngIf="user.role !==null&&user.role ! == 'Recruteur'">
+                        <a routerLink="/annonce" class="collapsed"  data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Annonce</a>
+                   
+                    </li>
+                    <li class="nav-item" *ngIf="user.role !==null&&user.role == 'Candidat'">
+                      <a routerLink="/profil" class="collapsed"  data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Profil</a>
+                 
+                  </li>
+                  <li class="nav-item"*ngIf="user.role !==null && user.role == 'Recruteur'">
+                    <a routerLink="/profilrec" class="collapsed"  data-bs-toggle="collapse" data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Espace recruteur</a>
+               
+                </li>
+                      </ul>
+                  </div> <!-- navbar collapse -->
+              </nav>
+              </div>
+              <div class="col-lg-3 " style="position: relative;left: 250px;">
+                  <div class="middle-right-area">
+                      <div class="nav-hotline">
+                          <i class="lni lni-phone"></i>
+                          <h3 >Contactez-nous:
+                              <span>(+216) 29 808 938</span>
+                          </h3>
+                          
+                      </div>
+                     
+                  </div>
+                  
+              </div>
+              <div class="col-lg-3 " style="position: relative;left: 120px;">
+                <div class="middle-right-area">
+                    <div class="nav-hotline">
+                        <i class="lni lni-home"></i>
+                        <h3>Adresse:
+                            <span>1053 Les jardins du Lac - Lac2  Tunis -Tunisie</span>
+                        </h3>
+                        
+                    </div>
+                   
+                </div>
+            </div>
+           
+          </div>
+      </div>
+  </div>
+  <!-- End Header Middle -->
+  <!-- Start Header Bottom -->
+  <div class="container">
+      <div class="row align-items-center">
+          <div class="col-lg-8 col-md-6 col-12">
+              <div class="nav-inner">
+                  <!-- Start Mega Category Menu -->
+                 
+                  <!-- End Mega Category Menu -->
+                  <!-- Start Navbar -->
+                 
+                  <!-- End Navbar -->
+              </div>
+          </div>
+         
+      </div>
+  </div>
+  <!-- End Header Bottom -->
+</header>
+
+<header class="header navbar-area">
+        
+      
+
+    <!-- topbar 2 -->
+ 
+  <!-- End Topbar 2 -->
+<!-- Start Header Middle -->
+
+
+
+    <!-- Modal -->
+  
+      <!-- Modal -->
+     
+<!--  Navbar  4 -->
+               <div class="topbar"  >
+                  <button  *ngIf="user.role ==null  "  style="position: relative;left: 1190px; color: white;"  class="btn" onmouseover="this.style.color='orange'" onmouseout="this.style.color='white'"  data-bs-toggle="modal" data-bs-target="#exampleModal-5" data-whatever="@mdo"><i class="lni lni-clipboard"></i>S'inscrire aujourd'hui <i class="lni lni-chevron-right"></i></button>
+                 
+                  
+</div>
+<!-- End Navbar 4 -->
+<!-- End Header Middle -->
+<!-- Start Header Bottom -->
+<div class="container">
+
+</div>
+<!-- End Header Bottom -->
+</header>
+
+
+
+<div class="card" >
+    
+      <div class="modal fade" id="exampleModal-4" tabindex="-1" aria-labelledby="ModalLabel" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" >
+            <div class="modal-header" >
+              <h5 class="modal-title" id="ModalLabel">Connexion</h5>
+              <a type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">X</span>
+              </a>
+            </div>
+           
+            <div class="modal-body">
+              <form [formGroup]="formAuth" (ngSubmit)="userauth()">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="recipient-name" placeholder="Email" formControlName="username">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="message-text" placeholder="Mot de passe" formControlName="password">
+                </div>
+                <br>
+                <div class="form-group">
+                  <button type="submit" (click)="userauth()" class="form-control button-primary">Connexion</button>
+              </div>
+              
+                <div class="form-group"><a class="form-control button-primary"  ><i class="lni lni-linkedin-original"></i> Login with linkedin
+                  login</a></div>
+
+                  <br>
+                  <a type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                    <p class="outer-link">Vous n'avez pas de compte ? <a data-bs-toggle="modal" data-bs-target="#exampleModal-5" data-whatever="@mdo" style="color: #41a5f5"aria-hidden="true"> S'inscrire </a>
+                    </p> </a>
+               
+              </form>
+            </div>
+          
+             
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="exampleModal-5" tabindex="-1" aria-labelledby="ModalLabel" style="display: none;" aria-hidde="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content" >
+            <div class="modal-header" >
+              <h5 class="modal-title" id="ModalLabel">Inscription </h5>
+              <a type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidde="true">X</span>
+              </a>
+            </div>
+           
+            <div class="modal-body">
+              <form [formGroup]="formUser" (ngSubmit)="addUser()">
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="nom" placeholder="Nom">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="prenom" placeholder="Prénom">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="pseudo" placeholder="Nom d'utilisateur">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" formControlName="email" placeholder="E-Mail">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" formControlName="password" placeholder="Mot de passe">
+                </div>
+                <div class="form-group">
+                  <label for="tailleentrep">Role</label>
+                  <select formControlName="role" class="form-select" id="tailleentrep">
+                    
+                    <option>Candidat</option>
+                    <option>Recruteur</option>
+                    
+                    <!-- Add more size options as needed -->
+                  </select>
+                </div>
+                <br>
+                <div class="form-group">
+                  <button type="submit" class="form-control button-primary">S'inscrire</button>
+                </div>
+              </form>
+              
+            </div>
+          
+             
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  

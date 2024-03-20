@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<div class="col-lg-6 col-md-6 col-6" style="position: relative; left: 480px; top: -350px; background-color: transparent;height: 100px;;">
+    <!-- Start Single Product -->
+    <div class="single-product" style="height: 350px;" *ngFor="let can of annCan">
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="product-image">
+                    <img src="{{srcImageUser+can.photo}}">
+                    
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 col-12">
+                <h4 class="title">
+                    <a >{{can.user.nom}} {{can.user.prenom}}</a>
+                </h4>
+                <div class="product-info"*ngFor="let ann of ann">
+                    <label>Titre :</label>
+                    <h4 class="title">
+                        <a>{{ann.titre}}</a>
+                    </h4>
+                    <label>Etude :</label> 
+                    <h4 class="title">
+                        <a>{{ann.etude}}</a>
+                    </h4>
+                    <label>Situation :</label>
+                    <h4 class="title">
+                        <a>{{ann.situation}}</a>
+                    </h4>
+                    <label>Adresse :</label>
+                    <h4 class="title">
+                        <a>{{can.adresse}}</a>
+                    </h4>
+                    <label>Email :</label>
+                    <h4 class="title">
+                        <a>{{can.user.email}}</a>
+                    </h4>
+                    <label>Tel :</label>
+                    <h4 class="title">
+                        <a>{{can.telephone}}</a>
+                    </h4>
+                    
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    
+    <button style="position: relative;left:450px;" routerLink="/moncv" type="submit" class="btn btn-info" > Voir mon profil CV vu par les recruteurs</button>
+</div>
+<app-footer></app-footer>

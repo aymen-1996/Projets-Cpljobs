@@ -1,0 +1,265 @@
+<div class="container">
+  <div class="card col-md-10 offset-1 mt-2">
+
+    <div *ngIf="successMessage" class="alert alert-success" role="alert">
+      <strong></strong> {{successMessage}}
+      <a (click)="closeAlert()" type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      <strong></strong> {{errorMessage}}
+      <a (click)="closeAlert()" type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div class="card-header" style="background-color: #8ea6ad; color: #fff; font-size: 24px; text-align: center">
+      Créer un nouveau candidat
+  </div>
+      <div class="card-body">
+    <form [formGroup]="formCustomer" (ngSubmit)="addCustomer()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="mb-1">
+            <label class="form-label">Nom</label>
+            <input [class.is-invalid]="formCustomer.controls['nom'].invalid && formCustomer.controls['nom'].touched"
+              type="text" formControlName="nom" class="form-control" placeholder="nom"
+              (focus)="formCustomer.get('nom')?.markAsTouched()">
+            <span class="text-danger"
+              *ngIf="formCustomer.get('nom')?.hasError('required') && formCustomer.get('nom')?.touched">
+              champ vide
+            </span>
+
+            <span class="text-danger"
+              *ngIf="formCustomer.get('nom')?.hasError('minlength') && formCustomer.get('nom')?.touched">
+              nom contient minumum {{ formCustomer.get('nom')?.errors?.['minlength'].requiredLength }} caractéres
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="mb-1">
+            <label class="form-label">Age:</label>
+            <input type="text" formControlName="age" class="form-control" placeholder="age"
+              [class.is-invalid]="formCustomer.controls['age'].invalid && formCustomer.controls['age'].touched"
+              (focus)="formCustomer.get('age')?.markAsTouched()">
+            <span class="text-danger"
+              *ngIf="formCustomer.get('age')?.hasError('required') && formCustomer.get('age')?.touched">
+              champ vide
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="mail" class="form-label">Region</label>
+          <select
+            [class.is-invalid]="formCustomer.controls['region'].invalid && formCustomer.controls['region'].touched"
+            formControlName="region" (focus)="formCustomer.get('region')?.markAsTouched()" class="form-control">
+            <option disabled selected>region</option>
+            <option>Ariana </option>
+            <option>Beja </option>
+            <option>Ben Arous </option>
+            <option>Bizerte </option>
+            <option>Gabes </option>
+            <option>Gafsa </option>
+            <option>Jendouba </option>
+            <option>Kairouan </option>
+            <option>Kasserine </option>
+            <option>Kebili </option>
+            <option>Kef </option>
+            <option>Mahdia </option>
+            <option>Manouba </option>
+            <option>Medenine </option>
+            <option>Monastir </option>
+            <option>Nabeul </option>
+            <option>Sfax</option>
+            <option>Sidi Bou Zid </option>
+            <option>Siliana </option>
+            <option>Sousse</option>
+            <option>Tataouine </option>
+            <option>Tozeur </option>
+            <option>Tunis</option>
+            <option>Zaghouan </option>
+          </select>
+          <span class="text-danger"
+            *ngIf="formCustomer.get('region')?.hasError('required') && formCustomer.get('region')?.touched">
+            champ vide
+          </span>
+        </div>
+        <div class="col-md-6">
+          <label for="numéro" class="form-label">Email</label>
+          <input [class.is-invalid]="formCustomer.controls['email'].invalid && formCustomer.controls['email'].touched"
+            type="text" formControlName="email" class="form-control" placeholder="xyz@xyz.com"
+            (focus)="formCustomer.get('email')?.markAsTouched()">
+          <span class="text-danger"
+            *ngIf="formCustomer.get('email')?.hasError('required') && formCustomer.get('email')?.touched">
+            champ vide
+          </span>
+
+          <span class="text-danger"
+            *ngIf="formCustomer.get('email')?.hasError('email') && formCustomer.get('email')?.touched">
+            donner un mail valide {{ formCustomer.get('email')?.errors?.['email'].requiredLength }}
+          </span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <label for="adresse" class="form-label">Secteur</label>
+          <div class="form-group">
+
+            <select
+              [class.is-invalid]="formCustomer.controls['secteur'].invalid && formCustomer.controls['secteur'].touched"
+              formControlName="secteur" class="form-control" (focus)="formCustomer.get('secteur')?.markAsTouched()">
+              <option disabled selected>secteur</option>
+              <option>Achats / Logistique</option>
+              <option>Administration / Secrétariat</option>
+              <option>Aéronautique / Aviation / Voyages</option>
+              <option>Agent polyvalent / Ouvrier Spécialisé</option>
+              <option>Agricuture / Agro-Alimentaire / Environnement</option>
+              <option>Architecture / Immobilier</option>
+              <option>Artisanat / Métier de L'Art</option>
+              <option>Automobile / Moteurs / Engins Mécaniques</option>
+              <option>Banque / Assurances / Finance Marché</option>
+              <option>Bàtiment Travaux Public Btp</option>
+              <option>Call Center / Télévente</option>
+              <option>Chimie / Biologie / Physique</option>
+              <option>Commercial / Vente / Distrution</option>
+              <option>Comptabilité / Gestion Finance / Audit</option>
+              <option>Consultant / Etude / Conseil</option>
+              <option>Cosmétique / Parfumerie / Luxe</option>
+              <option>Culture / Audiovisuel</option>
+              <option>Direction / Management / Stratégie</option>
+              <option>Droit / Fiscalité / Juridique</option>
+              <option>Électronique / Électricité / Énergie </option>
+              <option>Enseignement / Formation </option>
+              <option>Export / Transit</option>
+              <option>Gardiennage / Securité</option>
+              <option>Informatique / Multimédia </option>
+              <option>Ingénieur / Industrie / Production </option>
+              <option>Journalisme / Traduction /Édition </option>
+              <option>Maintenance / Qualité</option>
+              <option>Marketing / Publicité / Communication</option>
+              <option>Ressources Humaines / Social</option>
+              <option>Santé / Paramédical / Optique</option>
+              <option>Technicien / Industrie / Production</option>
+              <option>Télécom / Réseaux</option>
+              <option>Textile / Cuir</option>
+              <option>Tourisme / Hôtellerie / Restauration / Loisirs</option>
+              <option>Transport / Livraison / Manutention</option>
+              <option>Autres </option>
+
+
+
+            </select>
+            <span class="text-danger"
+              *ngIf="formCustomer.get('secteur')?.hasError('required') && formCustomer.get('secteur')?.touched">
+              champ vide
+            </span>
+
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="row">
+        <div class="col-12">
+          <label for="adresse" class="form-label">Etude</label>
+          <div class="form-group">
+
+
+            <select
+              [class.is-invalid]="formCustomer.controls['etude'].invalid && formCustomer.controls['etude'].touched"
+              (focus)="formCustomer.get('etude')?.markAsTouched()" formControlName="etude" class="form-control">
+              <option disabled selected>Niveau d'étude</option>
+              <option>Primaire </option>
+              <option>Secondaire </option>
+              <option>Formations professionnelles </option>
+              <option>Bac </option>
+              <option>Bac + 1 </option>
+              <option>Bac + 2 </option>
+              <option>Bac + 3 </option>
+              <option>Bac + 4 </option>
+              <option>Bac + 5 </option>
+              <option>Doctorat </option>
+              <option>Expert,Recherche </option>
+              <option>Autres </option>
+
+            </select>
+
+          </div>
+
+          <span class="text-danger"
+            *ngIf="formCustomer.get('etude')?.hasError('required') && formCustomer.get('etude')?.touched ">
+            champ vide
+          </span>
+
+        </div>
+
+
+
+
+
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="mb-1">
+            <label for="adresse" class="form-label">Experience</label>
+            <input
+              [class.is-invalid]="formCustomer.controls['anneeExperience'].invalid && formCustomer.controls['anneeExperience'].touched"
+              type="text" formControlName="anneeExperience" class="form-control" placeholder="année d'experience"
+              (focus)="formCustomer.get('anneeExperience')?.markAsTouched()">
+            <span class="text-danger"
+              *ngIf="formCustomer.get('anneeExperience')?.hasError('required') && formCustomer.get('anneeExperience')?.touched">
+              champ vide
+            </span>
+          </div>
+
+          <div class="mb-1">
+            <label class="form-label">Tel:</label>
+            <input
+              [class.is-invalid]="formCustomer.controls['telephone'].invalid && formCustomer.controls['telephone'].touched"
+              type="text" formControlName="telephone" class="form-control" placeholder="telephone"
+              (focus)="formCustomer.get('telephone')?.markAsTouched()">
+            <span class="text-danger"
+              *ngIf="formCustomer.get('telephone')?.hasError('required') && formCustomer.get('telephone')?.touched">
+              champ vide
+            </span>
+
+            <span class="text-danger"
+              *ngIf="formCustomer.get('telephone')?.hasError('minlength') && formCustomer.get('telephone')?.touched">
+              numero telephone contient {{ formCustomer.get('telephone')?.errors?.['minlength'].requiredLength }}
+              caractéres
+            </span>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <label class="form-label">CV</label>
+        <div class="col-10">
+        <input #fileInput type="text" class="form-control file-upload-info" disabled="" placeholder="Importer CV">
+      </div>
+      <div class="col-2">
+        <span class="input-group-append">
+          <label class="file-upload-browse btn btn-gradient-primary">
+            Importer
+            <input formControlName="cv" type="file" style="display: none;" (change)="handleFileInput($event)">
+          </label>
+        </span>
+      </div>
+      </div>
+
+      <!--<input class="form-control" formControlName="cv" type="file" name="file" (change)="handleFileInput($event)">-->
+      <button type="submit" class="btn btn-info" >Enregistrer le Candidat</button>
+    </form>
+    </div>
+
+
+    

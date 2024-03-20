@@ -1,0 +1,15 @@
+.background-image {
+    background-image: url('/assets/img/skills.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    color: brown;
+  }
+  

@@ -1,0 +1,56 @@
+<app-navbar></app-navbar>
+
+
+
+<h2>statistiques par jour</h2>
+
+<div style="width: 1100px; height: 700px; position: relative; top: 100px; left: 10%;">
+
+    <form [formGroup]="statique">
+        <div class="row">
+            <label>Rechercher des statistiques par date</label>
+            <br>
+            <div class="col-md-2">
+                <div>
+                    <input class="form-control" type="date" [ngModel]="startDate | date:'yyyy-MM-dd HH:mm:ss'" (change)="onStartDateChange($event)" formControlName="startDate" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-2">
+            <h3 class="vertical-text">Nombre des annonces </h3>
+        </div>
+        <div class="col-10">
+            <canvas baseChart
+                    [datasets]="lineChartDataStat"
+                    [labels]="lineChartLabelsStat"
+                    [options]="lineChartOptions"
+                    [type]="'bar'"
+                    [legend]="true"
+            ></canvas>
+        </div>
+    </div>
+</div>
+
+<h2 style="top: -20px;">statistiques par mois</h2>
+<div style="width: 1100px; height: 700px; position: relative;  left: 10%;">
+    <form [formGroup]="statique1" >
+    </form>
+    <div class="row">
+        <div class="col-2">
+            <h3 class="vertical-text">Nombre des annonces</h3>
+        </div>
+        <div class="col-10">
+            <canvas baseChart
+                    [datasets]="lineChartDataStat1"
+                    [labels]="lineChartLabelsStat1"
+                    [options]="lineChartOptions1"
+                    [type]="'bar'"
+                    [legend]="true"
+            ></canvas>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

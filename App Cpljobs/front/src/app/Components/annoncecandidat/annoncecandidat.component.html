@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<br>
+
+<body>
+    <table>
+        <thead >
+            <tr >
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Nom </th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Prenom</th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Age </th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Région</th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Étude</th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Expérience</th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Date</th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">CV</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let anncan of annCan | paginate: { itemsPerPage: 10, currentPage: p}">
+                <td>{{ anncan.infocan.user.nom }}</td>
+                <td>{{ anncan.infocan.user.prenom }}</td>
+                <td>{{ anncan.infocan.age }}</td>
+                <td>{{ anncan.infocan.region }}</td>
+                
+                <td >{{ anncan.infopro.etude }}</td>
+
+                <td >{{  anncan.infopro.experience }}</td>
+            
+                <td>{{ anncan.date |date  }}</td>
+<div *ngFor="let doc of doc">
+                <td   (click)="loadFileContent(doc.doc) " style="font-size:36px;color:blue">
+              
+                    <img style="width: 30px; display: inline-block;" src="assets/images/pdf.png" alt="Logo">
+                 
+                </td>
+    
+            </div>
+
+             
+
+               
+
+
+
+         
+            </tr>
+        </tbody>
+    </table>
+  </body>
+  <br>
+  <pagination-controls style="position: relative;left:600px"
+  previousLabel="Precedent"
+                    nextLabel="Suivant"
+                     (pageChange)="p = $event"></pagination-controls>
+
+
+ 
+<br>
+<app-footer></app-footer>

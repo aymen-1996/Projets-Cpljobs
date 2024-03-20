@@ -1,0 +1,48 @@
+
+<div class="col-md-6 grid-margin stretch-card">
+  <div class="card"style="box-shadow: 0 5px 10px rgba(0,0,0,.2); left:50%;">
+    <div class="card-body">
+      <h4 class="card-title">Demande Conge</h4>
+      
+
+      
+      <form [formGroup]="formcon" (ngSubmit)="addCon()">
+        
+        <div class="form-group">
+          <label for="exampleInputPassword1">datedebut</label>
+        
+          <div class = "container">  
+              <div class = "row">  
+                <div class = "col-sm-12" align = "center">   
+                 <input type = "date"  formControlName="dateDebut" name = "dateDebut">  
+                </div>  
+                  
+              </div>  
+            </div>  
+        </div>
+      
+        
+        <div class="form-group">
+          <label for="exampleInputConfirmPassword1"> datefin</label>
+          <div class = "container">  
+              <div class = "row">  
+                <div class = "col-sm-12" align = "center">   
+                 <input type = "date"  formControlName="dateFin" name = "dateFin">  
+                </div>  
+                  
+              </div>  
+            </div>  
+          
+        </div>
+
+
+        <select class="form-control form-control-lg"  formControlName="user" >
+          <option  [value]="users.id">{{users.prenom}}</option>
+        </select>
+        
+      
+        <button type="submit" class="btn btn-gradient-primary me-2">save</button>
+      </form>
+    </div>
+  </div>
+</div>

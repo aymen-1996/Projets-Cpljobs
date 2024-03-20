@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Liste Info Personnel</h4>
+      <div class="form-group">
+        <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="keyword"
+            placeholder="Rechercher..."
+            (input)="handleSearchCustomers()"
+          />
+        </form>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th> nom </th>
+            <th> poste </th>
+            <th> telephone </th>
+            <th> email </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let sub of subs  | paginate: { itemsPerPage: 10, currentPage: p}">
+          
+            <td> {{sub.nom}} </td>
+            <td>{{sub.poste}} </td>
+            <td> {{sub.tel}} </td>
+            <td>{{sub.email}} </td>
+            
+        
+        <td> 
+          
+          <label class="badge badge-gradient-danger"(click)="deleteInfo(sub.id)">Delete</label>
+          <label class="badge badge-gradient-danger"routerLink="/updatesub/{{sub.id}}">modifier</label>
+        </td>
+      
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+    <pagination-controls
+      previousLabel="Precedent"
+                        nextLabel="Suivant"
+                         (pageChange)="p = $event"></pagination-controls>
+  </div>

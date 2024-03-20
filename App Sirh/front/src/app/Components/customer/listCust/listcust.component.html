@@ -1,0 +1,92 @@
+
+<div class="card" >
+    <div class="card-header">La liste des candidats</div>
+   <div > <label class="lab">taille de la page</label></div>
+          <div style="width: 60px; position: relative;left: 1210px;top: 10px;">
+
+          <select  class="form-control" (change)="onPageChange($event)">
+            <option>20</option>
+            <option>35</option>
+            <option>50</option>
+            <option>100</option>
+            <option>200</option>
+            <option>500</option>
+            <option>1000</option>
+          </select>
+        </div>
+    <div class="card-body" >
+      
+      <div class="form-group">
+        <div class="form-group">
+          <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="keyword"
+              placeholder="Rechercher..."
+              (input)="handleSearchCustomers()"
+            />
+          </form>
+        </div>
+
+      <table class="table">
+        
+        <thead>
+        <tr>
+          <th>Nom</th><th>prenom</th><th >Email</th><th>Secteur</th><th>Etude</th><th>CV</th>
+        </tr>
+        </thead>
+        <tbody>
+         
+        <tr *ngFor="let c of customer |paginate: { itemsPerPage: pageSize, currentPage: currentPage}"  >
+      
+
+          
+          
+          <td>{{c.nom}}</td>
+         
+          
+          
+          <td >{{c.prenom}}</td>
+
+          
+
+          <td>{{c.email}}</td>
+       
+          <td>{{c.secteur}}</td>
+
+          <td>{{c.etude}}</td>
+          
+          
+         
+          
+          <td>
+            <button routerLink="/customeraccounts/{{c.id}}" class="btn btn-success">
+              <i class="bi bi-person-vcard"></i>
+            </button>
+          </td>
+         
+      
+         
+        
+        </tr>
+        </tbody>
+
+        
+      </table>
+
+  
+    </div>
+    
+     
+      <pagination-controls
+    previousLabel="Precedent"
+                      nextLabel="Suivant"
+                       (pageChange)="currentPage = $event"></pagination-controls>
+
+     
+    </div>
+     
+
+
+  </div>

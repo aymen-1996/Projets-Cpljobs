@@ -1,0 +1,29 @@
+.column-with-border {
+    border-right: 3px solid #1873cd;
+    padding-right: 15px; 
+
+    height: 250px;
+}
+
+.column-with1-border {
+    border-right: 3px solid #1873cd;
+    padding-right: 15px; 
+
+}
+
+.container {
+    border: 2px solid blue;
+    padding: 20px;
+}
+
+
+.base {
+    background-color: #2238c4;
+    float: left;
+    color: #FFF;
+    font-family: "Ubuntu",sans-serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-transform: none;
+    padding: 10px 12px;
+    font-size: 14px;
+}

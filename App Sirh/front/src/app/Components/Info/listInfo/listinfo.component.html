@@ -1,0 +1,61 @@
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Liste Info Personnel</h4>
+    <div class="form-group">
+      <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
+        <input
+          type="text"
+          class="form-control"
+          formControlName="keyword"
+          placeholder="Rechercher..."
+          (input)="handleSearchCustomers()"
+        />
+      </form>
+    </div>
+    <div class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Date de naissance</th>
+            <th>Adresse</th>
+            <th>Caractéristiques</th>
+            <th>CNSS</th>
+            <th>RIB</th>
+            <th>Date d'embauche</th>
+            <th>Date de départ</th>
+            <th>Motif</th>
+            <th>Statut</th>
+            <th>Cv</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let info of information | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>{{ info.nom }}</td>
+            <td>{{ info.age }}</td>
+            <td>{{ info.adresse }}</td>
+            <td>{{ info.caracteristiques }}</td>
+            <td>{{ info.cnss }}</td>
+            <td>{{ info.rib }}</td>
+            <td>{{ info.dateEmbauche }}</td>
+            <td>{{ info.dateDepart }}</td>
+            <td>{{ info.motif }}</td>
+            <td>{{ info.statut }}</td>
+            <td  (click)="loadFileContent(info.cv) " style="font-size:36px;color:blue">
+              
+                <i class="mdi mdi-file-pdf "></i>
+             
+            </td>
+    
+            <td>
+              <label class="badge badge-gradient-danger" (click)="deleteInfo(info.id)">Delete</label>
+              <label class="badge badge-gradient-warning" routerLink="/updateinfo/{{ info.id }}">Modifier</label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <pagination-controls previousLabel="Precedent" nextLabel="Suivant" (pageChange)="p = $event"></pagination-controls>
+</div>

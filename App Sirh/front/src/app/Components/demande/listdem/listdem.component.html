@@ -1,0 +1,43 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Listede demmande</h4>
+      <div class="form-group">
+        <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="keyword"
+            placeholder="Rechercher..."
+            (input)="handleSearchCustomers()"
+          />
+        </form>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Nom</th>
+          
+            <th> Message </th>
+            <th> Action </th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let info of demande  | paginate: { itemsPerPage: 10, currentPage: p}">
+            <td>{{info.user.nom}}</td>
+      
+            <td> {{info.message}} </td>
+            
+          
+        <td> <label class="badge badge-gradient-danger"(click)="deleteDem(info.id)">Delete</label></td>
+      
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+    <pagination-controls
+      previousLabel="Precedent"
+                        nextLabel="Suivant"
+                         (pageChange)="p = $event"></pagination-controls>
+  </div>

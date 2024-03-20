@@ -1,0 +1,19 @@
+.sidebar {
+    background-color: #ffffff; /* Change this to your desired color */
+    color: #ffffff; /* Change the text color if needed */
+  }
+  
+
+  
+  .sidebar .nav-link:hover {
+    color: #ff0000; /* Change the link hover color if needed */
+  }
+  
+  .sidebar .menu-title {
+    color: #ffffff; /* Change the menu title color if needed */
+  }
+  
+  .sidebar .menu-icon {
+    color: #ffffff; /* Change the menu icon color if needed */
+  }
+  

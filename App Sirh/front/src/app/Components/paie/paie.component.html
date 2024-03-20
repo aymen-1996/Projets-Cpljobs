@@ -1,0 +1,29 @@
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card"style="box-shadow: 0 5px 10px rgba(0,0,0,.2); left:50%;">
+      <div class="card-body">
+   
+        <form [formGroup]="formPaie" (ngSubmit)="addPaie()">
+        
+        
+
+          
+         
+           
+         
+          <div  >
+
+            <select  class="form-control form-control-lg"  formControlName="user" >
+              <option *ngFor="let user of users"  [value]="user.id">{{user.prenom}}</option>
+            </select>
+          </div>
+
+
+
+          <input class="form-control" formControlName="cv" type="file" name="file" (change)="handleFileInput($event)">
+         
+          <button type="submit" class="btn btn-gradient-primary me-2">Envoyer</button>
+        </form>
+      </div>
+    </div>
+  </div>

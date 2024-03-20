@@ -1,0 +1,116 @@
+
+<app-navbar></app-navbar>
+<div *ngIf="alert"  class="maill-success">
+    <div class="d-table">
+      <div class="d-table-cell">
+        <div class="container">
+          <div class="success-content">
+            <i class="lni lni-envelope"></i>
+            <h2>Votre E-mail envoyé avec succès</h2>
+            <p>Merci de nous avoir contacté, nous vous répondrons dès que possible.</p>
+            <div class="button">
+              <a routerLink="/" class="btn">Retour à la page d'accueil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<section *ngIf="!alert" id="contact-us" class="contact-us section">
+    <div class="container">
+        <div class="contact-head">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Contactez-nous</h2>
+                        
+                    </div>
+                </div>
+            </div>
+           
+            <div class="contact-info">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-12">
+                        <div class="single-info-head">
+                            <!-- Start Single Info -->
+                            <div class="single-info">
+                                <i class="lni lni-map"></i>
+                                <h3>Adresse:</h3>
+                                <ul>
+                                    <li>1053 Les jardins du Lac - Lac2 <br> Tunis -Tunisie.</li>
+                                </ul>
+                            </div>
+                            <!-- End Single Info -->
+                            <!-- Start Single Info -->
+                            <div class="single-info">
+                                <i class="lni lni-phone"></i>
+                                <h3>Appelez-nous au :</h3>
+                                <ul>
+                                    <li><a href="tel:+216 29 808 938">+216 29 808 938</a></li>
+                                   
+                                </ul>
+                            </div>
+                            <!-- End Single Info -->
+                            <!-- Start Single Info -->
+                            <div class="single-info">
+                                <i class="lni lni-envelope"></i>
+                                <h3>E-mail :</h3>
+                                <ul>
+                                    <li><a >belhassanbouhalfaya@cpljobs.tn</a>
+                                    </li>
+                                    <li><a >chouaibiaymen03@gmail.com</a></li>
+                                </ul>
+                            </div>
+                            <!-- End Single Info -->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-12 col-12">
+                        <div class="contact-form-head">
+                            <div class="form-main">
+                                <form class="form" [formGroup]="formContact" (ngSubmit)="Contact()">
+                                    <div class="row">
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input  type="text" placeholder="votre nom"  formControlName="nom">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input  type="text" placeholder="Votre sujet"  formControlName="subject">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input  type="email" placeholder="Votre e-mail"  formControlName="email">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-md-6 col-12">
+                                            <div class="form-group">
+                                                <input  type="text" placeholder="Ton téléphone"  formControlName="telephone">
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group message">
+                                                <textarea formControlName="msgBody"  placeholder="Votre message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form-group button">
+                                                <button type="submit" class="btn ">Soumettre un message</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<app-footer></app-footer>

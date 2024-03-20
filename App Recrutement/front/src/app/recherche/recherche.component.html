@@ -1,0 +1,97 @@
+<div class="card">
+    <div class="card-header">La liste des candidats</div>
+ 
+      <div class="row">
+
+  
+        <div class="col-md-3">
+          <label style="position: relative; left: 1190px;">Taille page</label>
+          <select style="position: relative; left: 1200px; width: 50px;" (change)="onPageChange($event)"
+            name="order-listing_length" aria-controls="order-listing" class="form-control form-control-sm">
+            <option>10</option>
+            <option>20</option>
+            <option>50</option>
+            <option>100</option>
+            <option>500</option>
+            <option>1000</option>
+          </select>
+        </div>
+      </div>
+   
+    <div class="card-body">
+  
+      <table class="table">
+  
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Age</th>
+            <th>Region</th>
+            <th>Email</th>
+            <th>Secteur</th>
+            <th>Etude</th>
+            <th>Experience</th>
+            <th>Tel</th>
+            <th>CV</th>
+            <th>Modifier</th>
+          </tr>
+        </thead>
+        <tbody>
+  
+          <tr *ngFor="let c of customer | paginate: { itemsPerPage: pageSize, currentPage: currentPage} ">
+  
+  
+  
+  
+            <td>{{c.nom}}</td>
+  
+  
+  
+            <td>{{c.age}}</td>
+  
+            <td>{{c.region}}</td>
+  
+  
+            <td>{{c.email}}</td>
+  
+            <td>{{c.secteur}}</td>
+  
+            <td>{{c.etude}}</td>
+  
+            <td>{{c.anneeExperience}}</td>
+  
+            <td>{{c.telephone}}</td>
+  
+            <td>
+              <button (click)="loadFileContent(c.cv) " class="btn btn-success">
+                <i class="bi bi-person-vcard"></i>
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-warning" routerLink="/customer-update/{{c.id}}"><i
+                  class="bi bi-person-gear"></i></button>
+            </td>
+  
+            <td>
+           
+            </td>
+  
+          </tr>
+        </tbody>
+  
+  
+      </table>
+  
+  
+  
+  
+  
+      <pagination-controls type="dots" previousLabel="Precedent" nextLabel="Suivant"
+        (pageChange)="currentPage = $event"></pagination-controls>
+  
+  
+    </div>
+  
+  
+  
+  </div>

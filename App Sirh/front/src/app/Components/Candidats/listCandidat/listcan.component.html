@@ -1,0 +1,59 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Liste Info Personnel</h4>
+      <div class="form-group">
+        <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="keyword"
+            placeholder="Rechercher..."
+            (input)="handleSearchCustomers()"
+          />
+        </form>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+     
+            <th> telephone </th>
+            <th> email </th>
+            <th> entretientel </th>
+            <th> entretienphy </th>
+            <th> evaluation </th>
+     
+            <th>sourcing</th>
+            <th>Action</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let can of cans  | paginate: { itemsPerPage: 10, currentPage: p}">
+          
+            <td> {{can.telephone}} </td>
+            <td>{{can.email}} </td>
+            <td>{{can.entretientel}}</td> 
+            <td> {{can.entretienphy}} </td>
+            <td> {{can.evaluation}} </td>
+         
+            <td> {{can.sourcing}} </td>
+        
+        <td> <label class="badge badge-gradient-danger"(click)="deleteInfo(can.id)">Delete</label>
+          <label class="badge badge-gradient-success"routerLink="/updatecan/{{can.id}}">Modifier</label>
+        </td>
+      
+          </tr>
+         
+        </tbody>
+      </table>
+    </div>
+    <pagination-controls
+      previousLabel="Precedent"
+                        nextLabel="Suivant"
+                         (pageChange)="p = $event"></pagination-controls>
+
+
+
+
+                       
+  </div>

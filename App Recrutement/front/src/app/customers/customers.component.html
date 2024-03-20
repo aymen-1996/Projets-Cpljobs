@@ -1,0 +1,169 @@
+<div class="card">
+  <div class="card-header">La liste des candidats</div>
+  <form [formGroup]="searchFormGroup" (ngSubmit)=" Searchcust1()">
+    <div class="row">
+      <div class="col-md-2" style="position: relative">
+        <label style="position: relative; left: 30px;" for="minAgeInput">Minimum Age:</label>
+        <input formControlName="minAge" style="width: 120px; position: relative; left: 30px;" type="text"
+          (input)=" Searchcust1()" class="form-control" placeholder="minAge">
+      </div>
+
+      <div class="col-md-2">
+        <label for="minAgeInput">Maximum Age:</label>
+        <input formControlName="maxAge" style="width: 120px;" type="text" (input)=" Searchcust1()"
+          class="form-control"  placeholder="maxAge">
+      </div>
+
+      <div class="col-md-3">
+        <label style="position: relative; left: 590px;">Taille page</label>
+        <select style="position: relative; left: 600px; width: 50px;" (change)="onPageChange($event)"
+          name="order-listing_length" aria-controls="order-listing" class="form-control form-control-sm">
+          <option>10</option>
+          <option>20</option>
+          <option>50</option>
+          <option>100</option>
+          <option>500</option>
+          <option>1000</option>
+        </select>
+      </div>
+    </div>
+  </form>
+  <div class="card-body">
+
+    <form [formGroup]="searchFormGroup" (ngSubmit)="Searchcust1()">
+      <div class="row">
+        <div class="col-7">
+      <input type="text" class="form-control" formControlName="keyword" placeholder="Search..."
+        (input)="Searchcust1()" />
+      </div>
+
+      <div class="col-4">
+        <div style="position: relative;top: -23px;" class="form-group">
+           <label ><strong> chercher par secteur</strong> </label>
+          <select
+            formControlName="secteur" class="form-control" (change)="Searchcust1()" >
+            <option disabled selected>secteur</option>
+            <option>Achats / Logistique</option>
+            <option>Administration / Secrétariat</option>
+            <option>Aéronautique / Aviation / Voyages</option>
+            <option>Agent polyvalent / Ouvrier Spécialisé</option>
+            <option>Agricuture / Agro-Alimentaire / Environnement</option>
+            <option>Architecture / Immobilier</option>
+            <option>Artisanat / Métier de L'Art</option>
+            <option>Automobile / Moteurs / Engins Mécaniques</option>
+            <option>Banque / Assurances / Finance Marché</option>
+            <option>Bàtiment Travaux Public Btp</option>
+            <option>Call Center / Télévente</option>
+            <option>Chimie / Biologie / Physique</option>
+            <option>Commercial / Vente / Distrution</option>
+            <option>Comptabilité / Gestion Finance / Audit</option>
+            <option>Consultant / Etude / Conseil</option>
+            <option>Cosmétique / Parfumerie / Luxe</option>
+            <option>Culture / Audiovisuel</option>
+            <option>Direction / Management / Stratégie</option>
+            <option>Droit / Fiscalité / Juridique</option>
+            <option>Électronique / Électricité / Énergie </option>
+            <option>Enseignement / Formation </option>
+            <option>Export / Transit</option>
+            <option>Gardiennage / Securité</option>
+            <option>Informatique / Multimédia </option>
+            <option>Ingénieur / Industrie / Production </option>
+            <option>Journalisme / Traduction /Édition </option>
+            <option>Maintenance / Qualité</option>
+            <option>Marketing / Publicité / Communication</option>
+            <option>Ressources Humaines / Social</option>
+            <option>Santé / Paramédical / Optique</option>
+            <option>Technicien / Industrie / Production</option>
+            <option>Télécom / Réseaux</option>
+            <option>Textile / Cuir</option>
+            <option>Tourisme / Hôtellerie / Restauration / Loisirs</option>
+            <option>Transport / Livraison / Manutention</option>
+            <option>Autres </option>
+
+
+
+          </select>
+
+        </div>
+      </div>
+    </div>
+    </form>
+
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Age</th>
+          <th>Region</th>
+          <th>Email</th>
+          <th>Secteur</th>
+          <th>Etude</th>
+          <th>Experience</th>
+          <th>Tel</th>
+          <th>CV</th>
+          <th>Modifier</th>
+          <th>Supprimer</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let c of customer | paginate: { itemsPerPage: pageSize, currentPage: currentPage} ">
+
+
+
+
+          <td>{{c.nom}}</td>
+
+
+
+          <td>{{c.age}}</td>
+
+          <td>{{c.region}}</td>
+
+
+          <td>{{c.email}}</td>
+
+          <td>{{c.secteur}}</td>
+
+          <td>{{c.etude}}</td>
+
+          <td>{{c.anneeExperience}}</td>
+
+          <td>{{c.telephone}}</td>
+
+          <td>
+            <button (click)="loadFileContent(c.cv) " class="btn btn-success">
+              <i class="bi bi-person-vcard"></i>
+            </button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-warning" routerLink="/customer-update/{{c.id}}"><i
+                class="bi bi-person-gear"></i></button>
+          </td>
+
+          <td>
+            <button (click)="handleDeleteCustomer(c)" class="btn btn-danger">
+              <i class="bi bi-person-fill-x"></i>
+            </button>
+          </td>
+
+        </tr>
+      </tbody>
+
+
+    </table>
+
+
+
+
+
+    <pagination-controls type="dots" previousLabel="Precedent" nextLabel="Suivant"
+      (pageChange)="currentPage = $event"></pagination-controls>
+
+
+  </div>
+
+
+
+</div>

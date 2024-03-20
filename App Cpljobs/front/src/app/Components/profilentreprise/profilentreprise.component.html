@@ -1,0 +1,190 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+    
+    <main class="main-content  mt-10">
+   
+        <div class="container">
+          <div class="row mt-lg-n10 mt-md-n11 mt-n10 justify-content-center">
+            <div class="col-xl-7 col-lg-9 col-md-9 mx-auto">
+              <div class="card z-index-0">
+                <div class="card-header text-center pt-4">
+                  <h5 style="color: white;">Ajouter informations entreprise</h5>
+                </div>
+
+                <div  *ngIf="alert" class="alert alert-success  fade show" role="alert">
+                    <strong></strong> Le profil a été modifié avec succès
+                    <a  type="button" class="close" data-dismiss="alert" >
+                      <span aria-hidden="true"></span>
+                    </a>
+                  </div>
+              
+               
+                <div class="card-body">
+  
+                  <form [formGroup]="formEntreprise" (ngSubmit)="updateEntreprise()">
+
+                    <div class="mb-3">
+                      <div class="form-group">
+                       
+                        <input formControlName="nomEntreprise" class="form-control" type="text" placeholder="Nom d'entreprise">
+                        
+            
+                      </div>
+                    </div>
+                    
+       
+                    <div class="mb-3">
+                        <select formControlName="secteur"  class="form-control"  >
+                            <option value="" disabled selected>secteur</option>
+                              <option >Achats / Logistique</option>
+                              <option >Administration / Secrétariat</option>
+                              <option >Aéronautique / Aviation / Voyages</option>
+                              <option >Agent polyvalent / Ouvrier Spécialisé</option>
+                              <option >Agricuture / Agro-Alimentaire / Environnement</option>
+                              <option >Architecture / Immobilier</option>
+                              <option >Artisanat / Métier de L'Art</option>
+                              <option >Automobile / Moteurs / Engins Mécaniques</option>
+                              <option >Banque / Assurances / Finance Marché</option>
+                              <option >Bàtiment Travaux Public Btp</option>
+                              <option >Call Center / Télévente</option>
+                              <option >Chimie / Biologie / Physique</option>
+                              <option >Commercial / Vente / Distrution</option>
+                              <option >Comptabilité / Gestion Finance / Audit</option>
+                              <option >Consultant / Etude / Conseil</option>
+                              <option >Cosmétique / Parfumerie / Luxe</option>
+                              <option >Culture / Audiovisuel</option>
+                              <option >Direction / Management / Stratégie</option>
+                              <option >Droit / Fiscalité / Juridique</option>
+                              <option >Électronique / Électricité / Énergie </option>
+                              <option >Enseignement / Formation </option>
+                              <option >Export / Transit</option>
+                              <option >Gardiennage / Securité</option>
+                              <option >Informatique / Multimédia </option>
+                              <option >Ingénieur / Industrie / Production </option>
+                              <option >Journalisme / Traduction /Édition </option>
+                              <option >Maintenance / Qualité</option>
+                              <option >Marketing / Publicité / Communication</option>
+                              <option >Ressources Humaines / Social</option>
+                              <option >Santé / Paramédical / Optique</option>
+                              <option >Technicien / Industrie / Production</option>
+                              <option >Télécom / Réseaux</option>
+                              <option >Textile / Cuir</option>
+                              <option >Tourisme / Hôtellerie / Restauration / Loisirs</option>
+                              <option>Transport / Livraison / Manutention</option>
+                              <option >Autres </option>
+                  
+            
+                      
+                          </select> 
+                    </div>
+
+
+
+                    <div class="mb-3">
+                      <select  formControlName="categorie"  class="form-control" >
+                          <option value="" disabled selected>Categorie</option>
+                          <option >Société privée locale </option>
+                          <option >Société privée étrangère </option>
+                          <option >Fonction publique </option>
+                          <option >Institution (administration) </option>
+                          
+                          </select>
+                        
+                        </div>
+
+
+                    <div class="mb-3">
+                        <select  formControlName="type"  class="form-control" >
+                            <option value="" disabled selected>Taille</option>
+                            <option >Moins de 20 </option>
+                            <option >Entre 20 et 100 </option>
+                            <option >Entre 100 et 200 </option>
+                            <option >Entre 200 et 500 </option>
+                            <option >Plus de 500 </option>
+                            </select>
+                          
+                          </div>
+
+
+
+
+                          <div class="mb-3">
+                          <select  formControlName="region"  class="form-control" >
+                            <option value="" disabled selected>region</option>
+                            <option >Ariana </option>
+                            <option >Beja </option>
+                            <option >Ben Arous </option>
+                            <option >Bizerte </option>
+                            <option >Gabes </option>
+                            <option >Gafsa </option>
+                            <option >Jendouba </option>
+                            <option >Kairouan </option>
+                            <option >Kasserine </option>
+                            <option >Kebili </option>
+                            <option >Kef </option>
+                            <option >Mahdia </option>
+                            <option >Manouba </option>
+                            <option >Medenine </option>
+                            <option >Monastir </option>
+                            <option >Nabeul </option>
+                            <option >Sfax</option>
+                            <option >Sidi Bou Zid </option>
+                            <option >Siliana </option>
+                            <option >Sousse</option>
+                            <option >Tataouine </option>
+                            <option >Tozeur </option>
+                            <option >Tunis</option>
+                            <option >Zaghouan </option>
+                            </select>
+                          
+                          </div>
+        
+                 
+                          <div class="mb-3">
+                            <div class="form-group">
+                             
+                              <input formControlName="adresse" class="form-control" type="text" placeholder="adresse">
+                              
+                  
+                            </div>
+                          </div>
+
+                          <div class="mb-3">
+                            <div class="form-group">
+                             
+                              <input formControlName="code" class="form-control" type="text" placeholder="Code Postale">
+                              
+                  
+                            </div>
+                          </div>
+
+
+                          <label for="myTextarea">Description:</label>
+                          <br>
+                          <textarea  formControlName="description" id="myTextarea" name="myTextarea" rows="5" cols="90"></textarea>
+<br>
+
+                          
+       
+                    
+                    <div class="text-center">
+                      <button class="btn btn-primary"  type="submit">Enregistrer </button>
+                    </div>
+
+
+                  
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <br>
+      <br>
+
+      <app-footer></app-footer>
+    
+  
+  

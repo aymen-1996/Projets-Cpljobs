@@ -1,0 +1,50 @@
+.base {
+    background-color: #2238c4;
+    float: left;
+    color: #FFF;
+    font-family: "Ubuntu",sans-serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    text-transform: none;
+    padding: 10px 12px;
+    font-size: 14px;
+}
+
+/* Apply styles to the card */
+.card {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    margin-left: 20%;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+  }
+  
+  /* Apply styles to the form inputs */
+  .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Style the alerts */
+  .alert {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  /* Add more custom styles as needed */
+  

@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<br>
+
+<body>
+    <table>
+        <thead >
+            <tr >
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Nom </th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Prenom</th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Secteur </th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Région</th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Étude</th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">Expérience</th>
+                <th style="background-color: rgb(0, 170, 255); color: aliceblue;">CV</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let doc of doc ">
+                <td>{{ doc.user.user.nom }}</td>
+                <td>{{ doc.user.user.prenom }}</td>
+                <td>{{ doc.user.secteur }}</td>
+                <td>{{ doc.user.lieu }}</td>
+                
+                <td >{{doc.user.etude }}</td>
+
+                <td >{{  doc.user.experience }}</td>
+            
+                <div >
+                    <div (click)="loadFileContent(doc.documents.doc)" style="font-size: 36px; color: blue">
+                      <img style="width: 30px; display: inline-block;" src="assets/images/pdf.png" alt="Logo">
+                    </div>
+                    <div>
+                      {{ doc.titre }}
+                    </div>
+                  </div>
+                  
+
+             
+
+               
+
+
+
+         
+            </tr>
+        </tbody>
+    </table>
+  </body>
+
+ 
+<br>
+
+
+
+<app-footer></app-footer>

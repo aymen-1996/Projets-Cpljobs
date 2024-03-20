@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<br>
+<div class="col-md-8 grid-margin stretch-card"  style="position: relative; left: 180px; top: -400px; background-color: transparent;">
+  <div class="card"style="box-shadow: 0 5px 10px rgba(0,0,0,.2); left:30%;" >
+    <div class="card-body" >
+      <div  *ngIf="alert" class="alert alert-success  fade show" role="alert">
+        <strong></strong> Votre lettres de motivation a été créé avec succès
+        <a (click) ="closeAlert()" type="button" class="close" data-dismiss="alert" >
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <h4 class="card-title">Mes lettres de motivation</h4> 
+      
+  
+  
+      <form [formGroup]="formMotivation" (ngSubmit)="addPtfort()">
+        
+       <br>
+       <br>
+             
+       <div class="col-md-6">
+        <div class="mb-1">
+          <label class="form-label">Titre</label>
+          <input type="text" formControlName="titre" class="form-control" placeholder="">
+
+        </div>
+      </div>
+
+            <div class="mb-1">
+                <label for="myTextarea">Contenu*</label>
+                <br>
+                <textarea  formControlName="description" id="myTextarea" name="myTextarea" rows="5" cols="100"></textarea>
+              
+      
+            </div>
+
+
+          
+          
+<br>
+         
+
+          
+             <button type="submit" class="btn btn-info" >Enregistrer</button>
+          </form>
+  
+</div>
+</div>
+</div>
+
+<router-outlet></router-outlet>
+<br>
+<app-footer></app-footer>
+

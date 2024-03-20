@@ -1,0 +1,373 @@
+<app-navbar></app-navbar>
+<br>
+<div class="col-md-9 grid-margin stretch-card" >
+  <div class="card"style="box-shadow: 0 5px 10px rgba(0,0,0,.2); border-radius: 10px; left: 190px;">
+    <div class="card-body" >
+      <div  *ngIf="alert" class="alert alert-success  fade show" role="alert">
+        <strong></strong> Votre annonce a été créé avec succès
+        <a (click) ="closeAlert()" type="button" class="close" data-dismiss="alert" >
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <h4 class="card-title">Ajouter une annonce</h4> 
+      
+  
+  
+      <form [formGroup]="formAnn" (ngSubmit)="addAnn()">
+        
+        <span class="base span4">Information sur l'annonce</span>
+       <br>
+       <br>
+  
+
+      
+        <label class="form-label">Responsable</label>
+        <select class="form-control form-control-lg" id="exampleFormControlSelect2" formControlName="user"  >
+            <option  [value]="users.id">{{users.nom}}</option>
+          </select>
+
+
+          <div class="col-md-12">
+            <div class="mb-1">
+              <label class="form-label">Nom d'entreprise</label>
+              <input type="text" formControlName="nom" class="form-control" placeholder="nom d'entreprise">
+              
+      
+            </div>
+          </div>
+<br>
+          <label class="form-label">Logo</label>
+          <input class="form-control" formControlName="image" type="file" name="file" (change)="handleFileInput($event)">
+            
+         
+
+
+
+          <br>
+          <span class="base span4">Détails de l'annonces</span>
+          <br>
+          <br>
+
+                <div class="col-md-12">
+                  <div class="mb-1">
+                    <label class="form-label">titre</label>
+                    <input type="text" formControlName="titre" class="form-control" placeholder="titre">
+                    
+     
+                  </div>
+                </div>
+                <br>
+                
+  
+               
+             
+
+                  <label for="myTextarea">Description:</label>
+                  <textarea  formControlName="description" id="myTextarea" name="myTextarea" rows="5" cols="100"></textarea>
+               
+                
+          
+          
+                  <div class="row">
+                    <label class="form-label">type de poste:</label>
+                    <div class="col-md-6">
+                        <div class="mb-1">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" formControlName="type" value="CDI" name="postType1">
+                                <label class="form-check-label">CDI</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" formControlName="type" value="CDD" name="postType2">
+                                <label class="form-check-label">CDD</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" formControlName="type" value="SIVP" name="postType3">
+                                <label class="form-check-label">SIVP</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" formControlName="type" value="Fonction publique" name="postType">
+                                <label class="form-check-label">Fonction publique</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" formControlName="type" value="Indépendant/Freelance" name="postType">
+                                <label class="form-check-label">Indépendant/Freelance</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-1">
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" formControlName="type" value="Intérim" name="postType">
+                                <label class="form-check-label">Intérim</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" formControlName="type" value="Stage/PFE" name="postType">
+                                <label class="form-check-label">Stage/PFE</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" formControlName="type" value="Stage" name="postType">
+                                <label class="form-check-label">Stage</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" class="form-check-input" formControlName="type" value="Saisonnier" name="postType">
+                                <label class="form-check-label">Saisonnier</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              
+              <div class="col-md-6">
+                <div class="mb-1">
+                  <label class="form-label">disponibilite</label>
+                  <select  formControlName="dispo"  class="form-control" >
+                    <option disabled selected></option>
+                    <option >Plein Temps </option>
+                    <option >Mi-Temps / Temps Partiel </option>
+                    </select>
+                </div>
+              </div>
+            
+           
+       
+              
+              
+               <div class="row">
+                <div class="col-6">
+                  <label for="adresse" class="form-label">Etude</label>
+                  <div class="form-group" >
+                
+                    
+  <select  formControlName="etude"  class="form-control" >
+    <option  disabled selected>Niveau d'étude</option>
+    <option>Primaire </option>
+    <option >Secondaire </option>
+    <option >Formations professionnelles </option>
+    <option >Bac </option>
+    <option >Bac + 1 </option>
+    <option >Bac + 2 </option>
+    <option >Bac + 3 </option>
+    <option >Bac + 4 </option>
+    <option >Bac + 5 </option>
+    <option >Doctorat </option>
+    <option>Expert,Recherche </option>
+    <option >Autres </option>
+    
+    </select>
+                    
+                  </div>
+                
+          </div>
+           
+       
+            
+           
+          
+              </div>
+               <div class="row">
+                <div class="col-6">
+                  <div class="mb-1">
+                    <label for="adresse" class="form-label">Niveau d'expérience</label>
+                    <select  formControlName="experience"  class="form-control" >
+                      <option  disabled selected></option>
+                      <option>Aucune experience</option>
+                      <option >Moins d'un an </option>
+                      <option >Entre 1 et 2 ans </option>
+                      <option >Entre 2 et 5 ans </option>
+                      <option >Entre 5 et 10 ans </option>
+                      <option >Plus que 10 ans </option>
+                 
+                      
+                      </select>
+            
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="mb-1">
+                <label class="form-label">Langues:</label>
+                <div class="form-check">
+                  <input type="radio" id="arabeRadio" class="form-check-input" name="langue" value="Arabe" formControlName="langue">
+                  <label class="form-check-label" for="arabeRadio">Arabe</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="francaisRadio" class="form-check-input" name="langue" value="Français" formControlName="langue">
+                  <label class="form-check-label" for="francaisRadio">Français</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="anglaisRadio" class="form-check-input" name="langue" value="Anglais" formControlName="langue">
+                  <label class="form-check-label" for="anglaisRadio">Anglais</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="italienRadio" class="form-check-input" name="langue" value="Italien" formControlName="langue">
+                  <label class="form-check-label" for="italienRadio">Italien</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="espagnolRadio" class="form-check-input" name="langue" value="Espagnol" formControlName="langue">
+                  <label class="form-check-label" for="espagnolRadio">Espagnol</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="allemandRadio" class="form-check-input" name="langue" value="Allemand" formControlName="langue">
+                  <label class="form-check-label" for="allemandRadio">Allemand</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="russeRadio" class="form-check-input" name="langue" value="Russe" formControlName="langue">
+                  <label class="form-check-label" for="russeRadio">Russe</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-1">
+                <div class="form-check">
+                  <input type="radio" id="polonaisRadio" class="form-check-input" name="langue" value="Polonais" formControlName="langue">
+                  <label class="form-check-label" for="polonaisRadio">Polonais</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="portugaisRadio" class="form-check-input" name="langue" value="Portugais" formControlName="langue">
+                  <label class="form-check-label" for="portugaisRadio">Portugais</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="neerlandaisRadio" class="form-check-input" name="langue" value="Néerlandais" formControlName="langue">
+                  <label class="form-check-label" for="neerlandaisRadio">Néerlandais</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="tchequeRadio" class="form-check-input" name="langue" value="Tcheque" formControlName="langue">
+                  <label class="form-check-label" for="tchequeRadio">Tcheque</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="chinoisRadio" class="form-check-input" name="langue" value="Chinois" formControlName="langue">
+                  <label class="form-check-label" for="chinoisRadio">Chinois</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="japonaisRadio" class="form-check-input" name="langue" value="Japonais" formControlName="langue">
+                  <label class="form-check-label" for="japonaisRadio">Japonais</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      
+
+          <div class="col-12">
+            <label for="adresse" class="form-label">Métiers</label>
+            <div class="form-group" >
+          
+                <select  formControlName="secteur"  class="form-control"  >
+                  <option  disabled selected>secteur</option>
+                    <option >Achats / Logistique</option>
+                    <option >Administration / Secrétariat</option>
+                    <option >Aéronautique / Aviation / Voyages</option>
+                    <option >Agent polyvalent / Ouvrier Spécialisé</option>
+                    <option >Agricuture / Agro-Alimentaire / Environnement</option>
+                    <option >Architecture / Immobilier</option>
+                    <option >Artisanat / Métier de L'Art</option>
+                    <option >Automobile / Moteurs / Engins Mécaniques</option>
+                    <option >Banque / Assurances / Finance Marché</option>
+                    <option >Bàtiment Travaux Public Btp</option>
+                    <option >Call Center / Télévente</option>
+                    <option >Chimie / Biologie / Physique</option>
+                    <option >Commercial / Vente / Distrution</option>
+                    <option >Comptabilité / Gestion Finance / Audit</option>
+                    <option >Consultant / Etude / Conseil</option>
+                    <option >Cosmétique / Parfumerie / Luxe</option>
+                    <option >Culture / Audiovisuel</option>
+                    <option >Direction / Management / Stratégie</option>
+                    <option >Droit / Fiscalité / Juridique</option>
+                    <option >Électronique / Électricité / Énergie </option>
+                    <option >Enseignement / Formation </option>
+                    <option >Export / Transit</option>
+                    <option >Gardiennage / Securité</option>
+                    <option >Informatique / Multimédia </option>
+                    <option >Ingénieur / Industrie / Production </option>
+                    <option >Journalisme / Traduction /Édition </option>
+                    <option >Maintenance / Qualité</option>
+                    <option >Marketing / Publicité / Communication</option>
+                    <option >Ressources Humaines / Social</option>
+                    <option >Santé / Paramédical / Optique</option>
+                    <option >Technicien / Industrie / Production</option>
+                    <option >Télécom / Réseaux</option>
+                    <option >Textile / Cuir</option>
+                    <option >Tourisme / Hôtellerie / Restauration / Loisirs</option>
+                    <option>Transport / Livraison / Manutention</option>
+                    <option >Autres </option>
+        
+
+            
+                </select> 
+              
+
+            </div>
+          
+            
+       
+    </div>
+    <br>
+    <span class="base span4">Lieu de travail</span>
+    <br>
+    <br>
+    <br>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="mail" class="form-label">Region</label>
+        <select  formControlName="region"  class="form-control" >
+<option disabled selected>region</option>
+<option >Ariana </option>
+<option >Beja </option>
+<option >Ben Arous </option>
+<option >Bizerte </option>
+<option >Gabes </option>
+<option >Gafsa </option>
+<option >Jendouba </option>
+<option >Kairouan </option>
+<option >Kasserine </option>
+<option >Kebili </option>
+<option >Kef </option>
+<option >Mahdia </option>
+<option >Manouba </option>
+<option >Medenine </option>
+<option >Monastir </option>
+<option >Nabeul </option>
+<option >Sfax</option>
+<option >Sidi Bou Zid </option>
+<option >Siliana </option>
+<option >Sousse</option>
+<option >Tataouine </option>
+<option >Tozeur </option>
+<option >Tunis</option>
+<option >Zaghouan </option>
+</select>
+
+            </div>
+         
+      
+  
+          
+    </div>
+  
+    <div class="col-md-12">
+      <div class="mb-1">
+        <label class="form-label">Adresse</label>
+        <input type="text" formControlName="adresse" class="form-control" placeholder="adresse">
+        
+
+      </div>
+    </div>
+<br>
+         
+                </div>
+              </div>
+              <br>
+              <br>
+              
+              
+  
+          
+             <button type="submit" class="btn btn-info" style="position: relative; left: 500px;">Créer l'annonce</button>
+          </form>
+  
+</div>
+</div>
+</div>
+
+<router-outlet></router-outlet>
+<br>
+<app-footer></app-footer>

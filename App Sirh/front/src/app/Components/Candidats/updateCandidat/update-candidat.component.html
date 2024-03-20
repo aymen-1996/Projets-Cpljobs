@@ -1,0 +1,92 @@
+
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card"style="box-shadow: 0 5px 10px rgba(0,0,0,.2); left:50%;">
+      <div class="card-body">
+        <h4 class="card-title">information personnel</h4>
+        <p class="card-description"> Ajouter info</p>
+        <form [formGroup]="formCustomer" (ngSubmit)="updateCandidat()">
+          <div class="form-group">
+            <label for="exampleInputUsername1">telephone </label>
+            <input  class="form-control" formControlName="telephone" placeholder="telephone">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">email</label>
+            <input type="text" formControlName="email" class="form-control"  placeholder="email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">entretientel</label>
+          
+            <div class = "container">  
+                <div class = "row">  
+                  <div class = "col-sm-12" align = "center">   
+                   <input type = "date"  formControlName="entretientel" name = "date">  
+                  </div>  
+                    
+                </div>  
+              </div>  
+          </div>
+        
+          
+          <div class="form-group">
+            <label for="exampleInputConfirmPassword1"> entretienphy</label>
+            <div class = "container">  
+                <div class = "row">  
+                  <div class = "col-sm-12" align = "center">   
+                   <input type = "date"  formControlName="entretienphy" name = "date">  
+                  </div>  
+                    
+                </div>  
+              </div>  
+            
+          </div>
+          
+
+          <div class="form-group row">
+            <label for="exampleInputPassword1">evaluation</label>
+            <div class="col-sm-4">
+                
+              <div class="form-check">
+                
+                <label class="form-check-label">
+                  <input formControlName="evaluation" type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="valide"> valide <i class="input-helper"></i></label>
+              </div>
+            </div>
+            <div class="col-sm-5">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio"formControlName="evaluation" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="rufuse"> rufuse <i class="input-helper"></i></label>
+              </div>
+            </div>
+          </div>
+          
+        
+        <div class="form-group row">
+            <label for="exampleInputPassword1">Sourcing</label>
+            <div class="col-sm-3">
+                
+              <div class="form-check">
+                
+                <label class="form-check-label">
+                  <input formControlName="sourcing" type="radio" class="form-check-input" name="membershipRa" id="membershipRa1" value="reséau sociaux"> reséau sociaux <i class="input-helper"></i></label>
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio"formControlName="sourcing" class="form-check-input" name="membershipRa" id="membershipRa2" value="sites web"> sites web <i class="input-helper"></i></label>
+              </div>
+            </div>
+            <div class="col-sm-3">
+                
+                <div class="form-check">
+                  
+                  <label class="form-check-label">
+                    <input formControlName="sourcing" type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="autres"> autres <i class="input-helper"></i></label>
+                </div>
+              </div>
+          </div>
+          <button type="submit" class="btn btn-gradient-primary me-2">save</button>
+        </form>
+      </div>
+    </div>
+  </div>

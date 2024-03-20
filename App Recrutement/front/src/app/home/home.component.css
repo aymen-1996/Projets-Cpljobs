@@ -1,0 +1,24 @@
+/* Define a base style for the button */
+.modern-button {
+    background-color: #007bff; /* Change this to your preferred button color */
+    color: #fff; /* Text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a smooth hover effect */
+  }
+  
+  /* Style the button on hover */
+  .modern-button:hover {
+    background-color: #0056b3; /* Change to a darker shade for hover effect */
+  }
+  
+  /* Style the button for focus (when it's clicked) */
+  .modern-button:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Add a custom focus style */
+  }
+  
+  /* Add additional styles as needed */
+  

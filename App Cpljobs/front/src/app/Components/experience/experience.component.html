@@ -1,0 +1,356 @@
+<app-navbar></app-navbar>
+<br>
+<button style="position: relative;left: 1220px;" type="button" class="btn btn-warning" (click)="getoui()" *ngIf="!aff">Modiffier info</button>
+<div class="container" *ngIf="!aff">
+  <div class="row justify-content-center">
+    <div class="col-md-9">
+      <div class="card shadow">
+        <div class="card-body">
+          <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> Votre profil a été créé avec succès.
+            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <h4 class="card-title">Ajouter une expérience</h4>
+
+          <form [formGroup]="formExperience" (ngSubmit)="addFormation()">
+            <div class="form-group">
+              <label for="posteact">Poste actuel</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" formControlName="posteact" value="oui" id="posteactOui">
+                <label class="form-check-label" for="posteactOui">OUI</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" formControlName="posteact" value="non" id="posteactNon">
+                <label class="form-check-label" for="posteactNon">NON</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="periode">Période</label>
+              <input type="date" formControlName="periode" class="form-control" id="periode">
+            </div>
+
+            <div class="form-group">
+              <label for="titrepost">Diplôme obtenu</label>
+              <input type="text" formControlName="titrepost" class="form-control" id="titrepost" placeholder="">
+            </div>
+
+            <div class="form-group">
+              <label for="typepost">Type de poste</label>
+              <select class="form-select" formControlName="typepost" id="typepost">
+                <option disabled selected>------------</option>
+                <option>CDI</option>
+                <option>CDD</option>
+                <option>SIVP</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="lieu">Lieu de travail</label>
+              <select formControlName="lieu" class="form-select" id="lieu">
+                <option disabled selected>----</option>
+                <option>Ariana</option>
+                <option>Beja</option>
+                <option >Ben Arous </option>
+<option >Bizerte </option>
+<option >Gabes </option>
+<option >Gafsa </option>
+<option >Jendouba </option>
+<option >Kairouan </option>
+<option >Kasserine </option>
+<option >Kebili </option>
+<option >Kef </option>
+<option >Mahdia </option>
+<option >Manouba </option>
+<option >Medenine </option>
+<option >Monastir </option>
+<option >Nabeul </option>
+<option >Sfax</option>
+<option >Sidi Bou Zid </option>
+<option >Siliana </option>
+<option >Sousse</option>
+<option >Tataouine </option>
+<option >Tozeur </option>
+<option >Tunis</option>
+<option >Zaghouan </option>
+                <!-- Add more locations as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="secteuract">Secteur d'activité</label>
+              <select formControlName="secteuract" class="form-select" id="secteuract">
+                <option disabled selected>------------</option>
+                <option>Achats / Logistique</option>
+                <option>Administration / Secrétariat</option>
+                <option >Aéronautique / Aviation / Voyages</option>
+                <option >Agent polyvalent / Ouvrier Spécialisé</option>
+                <option >Agricuture / Agro-Alimentaire / Environnement</option>
+                <option >Architecture / Immobilier</option>
+                <option >Artisanat / Métier de L'Art</option>
+                <option >Automobile / Moteurs / Engins Mécaniques</option>
+                <option >Banque / Assurances / Finance Marché</option>
+                <option >Bàtiment Travaux Public Btp</option>
+                <option >Call Center / Télévente</option>
+                <option >Chimie / Biologie / Physique</option>
+                <option >Commercial / Vente / Distrution</option>
+                <option >Comptabilité / Gestion Finance / Audit</option>
+                <option >Consultant / Etude / Conseil</option>
+                <option >Cosmétique / Parfumerie / Luxe</option>
+                <option >Culture / Audiovisuel</option>
+                <option >Direction / Management / Stratégie</option>
+                <option >Droit / Fiscalité / Juridique</option>
+                <option >Électronique / Électricité / Énergie </option>
+                <option >Enseignement / Formation </option>
+                <option >Export / Transit</option>
+                <option >Gardiennage / Securité</option>
+                <option >Informatique / Multimédia </option>
+                <option >Ingénieur / Industrie / Production </option>
+                <option >Journalisme / Traduction /Édition </option>
+                <option >Maintenance / Qualité</option>
+                <option >Marketing / Publicité / Communication</option>
+                <option >Ressources Humaines / Social</option>
+                <option >Santé / Paramédical / Optique</option>
+                <option >Technicien / Industrie / Production</option>
+                <option >Télécom / Réseaux</option>
+                <option >Textile / Cuir</option>
+                <option >Tourisme / Hôtellerie / Restauration / Loisirs</option>
+                <option>Transport / Livraison / Manutention</option>
+                <option >Autres </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tailleentrep">Taille de l'entreprise</label>
+              <select formControlName="tailleentrep" class="form-select" id="tailleentrep">
+                <option disabled selected>------------</option>
+                <option>Moins de 20 employés</option>
+                <option>Entre 20 et 100 employés</option>
+                <option>Entre 100 et 200 employés</option>
+                <option>Entre 200 et 500 employés</option>
+                <option>Plus de 500 employés</option>
+                <!-- Add more size options as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="catentreprise">Catégorie de l'entreprise</label>
+              <select formControlName="catentreprise" class="form-select" id="catentreprise">
+                <option disabled selected>------------</option>
+                <option>Entreprise privée tunisienne</option>
+                <option>Entreprise privée étrangère</option>
+                 <option>Entreprise publique</option>
+                 <option>Institution (administration)</option>
+                <!-- Add more category options as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="salairemensuel">Salaire mensuel net</label>
+              <select formControlName="salairemensuel" class="form-select" id="salairemensuel">
+                <option disabled selected>------------</option>
+                <option>Moins de 250</option>
+                <option>Entre 250 et 500</option>
+                <option>Entre 500 et 750</option>
+                <option>Entre 750 et 1000</option>
+                <option>Entre 1000 et 1500</option>
+                <option>Entre 1500 et 2000</option>
+                <option>Entre 2000 et 2500</option>
+                <option>Plus que 2500</option>
+                <!-- Add more salary options as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="myTextarea">Description</label>
+              <textarea formControlName="tache" id="myTextarea" name="myTextarea" class="form-control" rows="5"></textarea>
+            </div>
+            <br>
+
+            <button type="submit" class="btn btn-info">Missions et tâches</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+
+<div class="container" *ngIf="aff">
+  <div class="row justify-content-center">
+    <div class="col-md-9">
+      <div class="card shadow">
+        <div class="card-body">
+          <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> Votre profil a été créé avec succès.
+            <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <h4 class="card-title">Ajouter une expérience</h4>
+
+          <form [formGroup]="formExperience1" (ngSubmit)="updateExp()">
+            <div class="form-group">
+              <label for="posteact">Poste actuel</label>
+              <select class="form-select" formControlName="posteact" id="posteact">
+                  <option >OUI</option>
+                  <option >NON</option>
+              </select>
+          </div>
+          
+
+            <div class="form-group">
+              <label for="periode">Période</label>
+              <input type="date" formControlName="periode" class="form-control" id="periode">
+            </div>
+
+            <div class="form-group">
+              <label for="titrepost">Diplôme obtenu</label>
+              <input type="text" formControlName="titrepost" class="form-control" id="titrepost" placeholder="">
+            </div>
+
+            <div class="form-group">
+              <label for="typepost">Type de poste</label>
+              <select class="form-select" formControlName="typepost" id="typepost">
+                <option disabled selected>------------</option>
+                <option>CDI</option>
+                <option>CDD</option>
+                <option>SIVP</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="lieu">Lieu de travail</label>
+              <select formControlName="lieu" class="form-select" id="lieu">
+                <option disabled selected>----</option>
+                <option>Ariana</option>
+                <option>Beja</option>
+                <option >Ben Arous </option>
+<option >Bizerte </option>
+<option >Gabes </option>
+<option >Gafsa </option>
+<option >Jendouba </option>
+<option >Kairouan </option>
+<option >Kasserine </option>
+<option >Kebili </option>
+<option >Kef </option>
+<option >Mahdia </option>
+<option >Manouba </option>
+<option >Medenine </option>
+<option >Monastir </option>
+<option >Nabeul </option>
+<option >Sfax</option>
+<option >Sidi Bou Zid </option>
+<option >Siliana </option>
+<option >Sousse</option>
+<option >Tataouine </option>
+<option >Tozeur </option>
+<option >Tunis</option>
+<option >Zaghouan </option>
+                <!-- Add more locations as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="secteuract">Secteur d'activité</label>
+              <select formControlName="secteuract" class="form-select" id="secteuract">
+                <option disabled selected>------------</option>
+                <option>Achats / Logistique</option>
+                <option>Administration / Secrétariat</option>
+                <option >Aéronautique / Aviation / Voyages</option>
+                <option >Agent polyvalent / Ouvrier Spécialisé</option>
+                <option >Agricuture / Agro-Alimentaire / Environnement</option>
+                <option >Architecture / Immobilier</option>
+                <option >Artisanat / Métier de L'Art</option>
+                <option >Automobile / Moteurs / Engins Mécaniques</option>
+                <option >Banque / Assurances / Finance Marché</option>
+                <option >Bàtiment Travaux Public Btp</option>
+                <option >Call Center / Télévente</option>
+                <option >Chimie / Biologie / Physique</option>
+                <option >Commercial / Vente / Distrution</option>
+                <option >Comptabilité / Gestion Finance / Audit</option>
+                <option >Consultant / Etude / Conseil</option>
+                <option >Cosmétique / Parfumerie / Luxe</option>
+                <option >Culture / Audiovisuel</option>
+                <option >Direction / Management / Stratégie</option>
+                <option >Droit / Fiscalité / Juridique</option>
+                <option >Électronique / Électricité / Énergie </option>
+                <option >Enseignement / Formation </option>
+                <option >Export / Transit</option>
+                <option >Gardiennage / Securité</option>
+                <option >Informatique / Multimédia </option>
+                <option >Ingénieur / Industrie / Production </option>
+                <option >Journalisme / Traduction /Édition </option>
+                <option >Maintenance / Qualité</option>
+                <option >Marketing / Publicité / Communication</option>
+                <option >Ressources Humaines / Social</option>
+                <option >Santé / Paramédical / Optique</option>
+                <option >Technicien / Industrie / Production</option>
+                <option >Télécom / Réseaux</option>
+                <option >Textile / Cuir</option>
+                <option >Tourisme / Hôtellerie / Restauration / Loisirs</option>
+                <option>Transport / Livraison / Manutention</option>
+                <option >Autres </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tailleentrep">Taille de l'entreprise</label>
+              <select formControlName="tailleentrep" class="form-select" id="tailleentrep">
+                <option disabled selected>------------</option>
+                <option>Moins de 20 employés</option>
+                <option>Entre 20 et 100 employés</option>
+                <option>Entre 100 et 200 employés</option>
+                <option>Entre 200 et 500 employés</option>
+                <option>Plus de 500 employés</option>
+                <!-- Add more size options as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="catentreprise">Catégorie de l'entreprise</label>
+              <select formControlName="catentreprise" class="form-select" id="catentreprise">
+                <option disabled selected>------------</option>
+                <option>Entreprise privée tunisienne</option>
+                <option>Entreprise privée étrangère</option>
+                 <option>Entreprise publique</option>
+                 <option>Institution (administration)</option>
+                <!-- Add more category options as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="salairemensuel">Salaire mensuel net</label>
+              <select formControlName="salairemensuel" class="form-select" id="salairemensuel">
+                <option disabled selected>------------</option>
+                <option>Moins de 250</option>
+                <option>Entre 250 et 500</option>
+                <option>Entre 500 et 750</option>
+                <option>Entre 750 et 1000</option>
+                <option>Entre 1000 et 1500</option>
+                <option>Entre 1500 et 2000</option>
+                <option>Entre 2000 et 2500</option>
+                <option>Plus que 2500</option>
+                <!-- Add more salary options as needed -->
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="myTextarea">Description</label>
+              <textarea formControlName="tache" id="myTextarea" name="myTextarea" class="form-control" rows="5"></textarea>
+            </div>
+            <br>
+
+            <button type="submit" class="btn btn-info">Missions et tâches</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

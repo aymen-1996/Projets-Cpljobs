@@ -1,0 +1,44 @@
+/* Styles CSS pour la section Espace Recruteur */
+section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.meta-information {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.meta-information h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.col-lg-4 {
+    flex: 0 0 30%; /* Largeur des colonnes */
+}
+
+.col-lg-4 img {
+    height: 90px;
+    width: 90px;
+    margin-right: 20px;
+}
+
+.col-lg-4 h5 {
+    font-size: 18px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.col-lg-4 h5:hover {
+    color: #007bff; /* Couleur au survol */
+}
+
+/* Styles pour le pied de page */
+

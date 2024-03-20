@@ -1,0 +1,36 @@
+
+  /* Apply styles to the card */
+  .card {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin-left: 20%;
+  }
+
+  /* Style the form elements */
+  .form-label {
+    font-weight: bold;
+  }
+
+  .form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+
+  /* Style the submit button */
+  .btn-info {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  /* Style the alert */
+  .alert-success {
+    background-color: #D4EDDA;
+    color: #155724;
+    border-color: #C3E6CB;
+    border-radius: 5px;
+  }
+

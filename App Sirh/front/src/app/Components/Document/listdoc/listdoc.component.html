@@ -1,0 +1,50 @@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        
+        
+        <h4 class="card-title">Listes Documents Administratifs </h4>
+        <div class="form-group">
+          <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="keyword"
+              placeholder="Rechercher..."
+              (input)="handleSearchCustomers()"
+            />
+          </form>
+        </div>
+    
+        <table class="table">
+          <thead>
+            <tr >
+              <th>id</th>
+              <th>type_contrat.</th>
+              <th>anciennete</th>
+              <th>mobilite</th>
+              <th>contrat</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let doc of docs   | paginate: { itemsPerPage: 10, currentPage: p}">
+              <td>{{doc.id}}</td>
+              <td>{{doc.type_contrat}}</td>
+              <td>{{doc.anciennete}}</td>
+              <td>{{doc.mobilite}}</td>
+              <td  (click)="loadFileContent(doc.contrat) "  style="font-size:36px;color:rgb(0, 255, 140)"><i class="mdi mdi-file-pdf "></i></td>
+              <td> <label class="badge badge-gradient-danger"(click)="deleteDoc(doc.id)">Delete</label>
+                <label class="badge badge-gradient-warning" routerLink="/updatedoc/{{ doc.id }}">Modifier</label>
+              </td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+      <pagination-controls
+      previousLabel="Precedent"
+                        nextLabel="Suivant"
+                         (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>

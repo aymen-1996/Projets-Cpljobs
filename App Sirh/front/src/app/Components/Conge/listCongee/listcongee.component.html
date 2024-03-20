@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Liste Conge</h4>
+      
+      <div class="form-group">
+        <form [formGroup]="searchFormGroup" (ngSubmit)="handleSearchCustomers()">
+          <input
+            type="text"
+            class="form-control"
+            formControlName="keyword"
+            placeholder="Rechercher..."
+            (input)="handleSearchCustomers()"
+          />
+        </form>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th> Date debut </th>
+            <th> date fin </th>
+            <th>Statut</th>
+            <th> Action </th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let con of conge  | paginate: { itemsPerPage: 10, currentPage: p}">
+            <td>{{con.user.nom}}</td>
+            <td> {{con.dateDebut}} </td>
+            <td> {{con.dateFin}} </td>
+            <td> {{con.statut}} </td>
+            
+          
+        <td> <label class="badge badge-gradient-danger"(click)="deleteDem(con.id)">Delete</label></td>
+       <td> <label class="badge badge-gradient-danger"(click)="acceptConge(con.id)">accepte</label> </td>
+       <td> <label class="badge badge-gradient-danger"(click)="refusConge(con.id)">refus</label> </td>
+          </tr>
+
+         
+        </tbody>
+      </table>
+    </div>
+    <pagination-controls
+      previousLabel="Precedent"
+                        nextLabel="Suivant"
+                         (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+
+
+
+  

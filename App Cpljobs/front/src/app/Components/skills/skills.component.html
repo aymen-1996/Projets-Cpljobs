@@ -1,0 +1,162 @@
+<app-navbar></app-navbar>
+<br>
+
+
+
+<button style="position: relative;left: 1220px;" type="button" class="btn btn-warning" (click)="getoui()" *ngIf="!aff">Modiffier info</button>
+<div class="col-md-9 grid-margin stretch-card" *ngIf="!aff">
+  <div class="card"style="box-shadow: 0 5px 10px rgba(0,0,0,.2); left:20%;" >
+    <div class="card-body" >
+      <div  *ngIf="alert" class="alert alert-success  fade show" role="alert">
+        <strong></strong> Votre profil a été créé avec succès
+        <a (click) ="closeAlert()" type="button" class="close" data-dismiss="alert" >
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <h4 class="card-title">Ajouter une compétence</h4> 
+      
+  
+  
+      <form [formGroup]="formSkills" (ngSubmit)="addSkills()">
+        
+       <br>
+       <br>
+  
+       <div class="col-md-12">
+        <div class="mb-1">
+          <label class="form-label">Compétence</label>
+          <input type="text" formControlName="competence" class="form-control" placeholder="">
+          
+  
+        </div>
+      </div>
+      <br>
+      <div class="col-md-12">
+
+      <div class="mb-1">
+        <label class="form-label">Niveau
+        </label>
+        <div class="row">
+          <div class="col-2">
+        <div class="form-check">
+          <input type="radio" class="form-check-input" formControlName="niveau" value="Débutant" name="postType5">
+          <label class="form-check-label">Débutant</label>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="form-check">
+          <input type="radio" class="form-check-input" formControlName="posteact" value="Intermédiaire" name="postType5">
+          <label class="form-check-label">Intermédiaire</label>
+      </div>
+    </div>
+    <div class="col-2">
+        <div class="form-check">
+          <input type="radio" class="form-check-input" formControlName="posteact" value="Avancé" name="postType5">
+          <label class="form-check-label">Avancé</label>
+      </div>
+    </div>
+    <div class="col-2">
+        <div class="form-check">
+          <input type="radio" class="form-check-input" formControlName="posteact" value="Expert" name="postType5">
+          <label class="form-check-label">Expert</label>
+      </div>
+    </div>
+</div>
+     
+      </div>
+    </div>
+
+
+
+
+       
+            <div class="mb-1">
+                <label for="myTextarea">Description:</label>
+                <br>
+                <textarea  formControlName="description" id="myTextarea" name="myTextarea" rows="5" cols="100"></textarea>
+              
+      
+            </div>
+          
+<br>
+         
+
+          
+             <button type="submit" class="btn btn-info" >Enregistrer</button>
+          </form>
+  
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="col-md-9 grid-margin stretch-card"*ngIf="aff" >
+  <div class="card"style="box-shadow: 0 5px 10px rgba(0,0,0,.2); left:20%;" >
+    <div class="card-body" >
+      <div  *ngIf="alert" class="alert alert-success  fade show" role="alert">
+        <strong></strong> Votre profil a été créé avec succès
+        <a (click) ="closeAlert()" type="button" class="close" data-dismiss="alert" >
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <h4 class="card-title">Ajouter une compétence</h4> 
+      
+  
+  
+      <form [formGroup]="formSkills1" (ngSubmit)="updateSkills()">
+        
+       <br>
+       <br>
+  
+       <div class="col-md-12">
+        <div class="mb-1">
+          <label class="form-label">Compétence</label>
+          <input type="text" formControlName="competence" class="form-control" placeholder="">
+          
+  
+        </div>
+      </div>
+      <br>
+      <div class="col-md-12">
+        <div class="mb-1">
+          <label class="form-label">Niveau</label>
+          <div class="col-2">
+              <select class="form-select" formControlName="niveau" name="postType5">
+                  <option >Débutant</option>
+                  <option >Intermédiaire</option>
+                  <option >Avancé</option>
+                  <option >Expert</option>
+              </select>
+          </div>
+      </div>
+      
+    </div>
+
+
+
+
+       
+            <div class="mb-1">
+                <label for="myTextarea">Description:</label>
+                <br>
+                <textarea  formControlName="description" id="myTextarea" name="myTextarea" rows="5" cols="100"></textarea>
+              
+      
+            </div>
+          
+<br>
+         
+
+          
+             <button type="submit" class="btn btn-info" >Enregistrer</button>
+          </form>
+  
+</div>
+</div>
+</div>
+<router-outlet></router-outlet>
+<br>
+<app-footer></app-footer>

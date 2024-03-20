@@ -1,0 +1,103 @@
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+    .base {
+        background-color: #2238c4;
+        float: left;
+        color: #FFF;
+        font-family: "Ubuntu",sans-serif,"Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-weight: bold;
+        text-transform: none;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+
+ 
+    /* Add some spacing and alignment to your page */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Style the section header */
+    .section-title h2 {
+        font-size: 24px;
+        color: #333;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    /* Style the form inputs and select boxes */
+    .form-group input[type="text"],
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    /* Style the buttons */
+    .btn {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    /* Center the buttons */
+    .button {
+        text-align: center;
+    }
+    
+    /* Style the footer */
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    /* Style the navigation bar (if needed) */
+/* Style the select element */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Style the disabled option */
+  .form-control option[disabled] {
+    color: #888;
+  }
+  
+  /* Style the selected option */
+  .form-control option:checked {
+    background-color: #007BFF;
+    color: #fff;
+  }
+  
